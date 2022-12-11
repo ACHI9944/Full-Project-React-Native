@@ -2,9 +2,9 @@ import { Controller } from "react-hook-form";
 import { Text, TextInput, View } from "react-native";
 import InputStyle from "./InputStyle";
 
-function Input({ control, name, rules = {}, placeholder, keyboardType }) {
-  const styles = InputStyle;
+const styles = InputStyle;
 
+function Input({ control, name, rules = {}, placeholder, keyboardType }) {
   return (
     <Controller
       control={control}

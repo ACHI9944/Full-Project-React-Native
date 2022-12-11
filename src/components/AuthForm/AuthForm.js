@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
-import { ScrollView, View } from "react-native";
+import { ScrollView } from "react-native";
 import Input from "../Input/Input";
 import FlatButton from "../ui/FlatButton";
 import AuthFormStyle from "./AuthFormStyle";
 
+const styles = AuthFormStyle;
+
 function AuthForm() {
   const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-  const styles = AuthFormStyle;
 
   // hook form
   const { control, handleSubmit, watch } = useForm();
