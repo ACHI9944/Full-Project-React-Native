@@ -23,7 +23,7 @@ const LoginScreenStyle = StyleSheet.create({
   },
   authForm: {
     width: "100%",
-    marginBottom: 70,
+    marginBottom: 100,
   },
   bottomText: {
     flexDirection: "row",

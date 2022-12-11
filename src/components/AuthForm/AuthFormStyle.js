@@ -25,6 +25,7 @@ const AuthFormStyle = StyleSheet.create({
     fontSize: 17,
   },
   button: {
+    marginTop: 24,
     backgroundColor: "#bbaaf3",
     width: "90%",
     height: 48,
@@ -33,6 +34,7 @@ const AuthFormStyle = StyleSheet.create({
     justifyContent: "center",
   },
   pressedStyle: {
+    marginTop: 24,
     backgroundColor: "#bbaaf3",
     width: "90%",
     height: 48,
@@ -40,6 +42,9 @@ const AuthFormStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     opacity: 0.9,
+  },
+  typingStyle: {
+    backgroundColor: "#542ee0",
   },
   buttonTextStyle: {
     color: "white",

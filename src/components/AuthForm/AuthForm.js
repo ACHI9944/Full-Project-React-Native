@@ -1,46 +1,42 @@
-import { useState } from "react";
-import { Text, TextInput, View } from "react-native";
+import { useForm } from "react-hook-form";
+import { ScrollView, View } from "react-native";
+import Input from "../Input/Input";
 import FlatButton from "../ui/FlatButton";
 import AuthFormStyle from "./AuthFormStyle";
 
 function AuthForm() {
+  const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const styles = AuthFormStyle;
-  const [enteredEmail, setEnteredEmail] = useState("");
-  let isFilling = enteredEmail.length > 0;
 
-  function emailChangeHandler(value) {
-    setEnteredEmail(value);
+  // hook form
+  const { control, handleSubmit, watch } = useForm();
+  const inputText = watch("Email");
+  function manageInputHandler(data) {
+    console.log(data);
   }
 
   return (
-    <View style={styles.authForm}>
-      <View
-        style={[
-          styles.input,
-          isFilling ? { justifyContent: "flex-start" } : null,
-        ]}
-      >
-        {isFilling ? <Text style={styles.smallText}>Email Address</Text> : null}
-        <TextInput
-          placeholder="Email address"
-          style={styles.textInput}
-          keyboardType="email-address"
-          onChangeText={emailChangeHandler}
-          value={enteredEmail}
-        />
-      </View>
+    <ScrollView contentContainerStyle={styles.authForm}>
+      <Input
+        name="Email"
+        placeholder="Email address"
+        keyboardType="email-address"
+        control={control}
+        rules={{
+          required: "Email is required",
+          pattern: { value: EMAIL_REGEX, message: "Email is invalid" },
+        }}
+      />
 
       <FlatButton
-        style={[
-          styles.button,
-          isFilling ? { backgroundColor: "#542ee0" } : null,
-        ]}
+        onPress={handleSubmit(manageInputHandler)}
+        style={[styles.button, !!inputText && styles.typingStyle]}
         pressedStyle={styles.pressedStyle}
         buttonTextStyle={styles.buttonTextStyle}
       >
         Log in
       </FlatButton>
-    </View>
+    </ScrollView>
   );
 }
 

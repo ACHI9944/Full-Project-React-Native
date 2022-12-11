@@ -6,6 +6,7 @@ import SmallButton from "../../../components/ui/SmallButton";
 import LoginScreenStyle from "./LoginScreenStyle";
 
 function LoginScreen() {
+  
   const styles = LoginScreenStyle;
   return (
     <SafeAreaView style={styles.screen}>
