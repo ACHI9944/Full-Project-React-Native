@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
-import FlatButton from "./ui/FlatButton";
+import { Text, TextInput, View } from "react-native";
+import FlatButton from "../ui/FlatButton";
+import AuthFormStyle from "./AuthFormStyle";
 
 function AuthForm() {
+  const styles = AuthFormStyle;
   const [enteredEmail, setEnteredEmail] = useState("");
   let isFilling = enteredEmail.length > 0;
 
@@ -29,48 +31,17 @@ function AuthForm() {
       </View>
 
       <FlatButton
-        text={"Log in"}
         style={[
           styles.button,
           isFilling ? { backgroundColor: "#542ee0" } : null,
         ]}
-      />
+        pressedStyle={styles.pressedStyle}
+        buttonTextStyle={styles.buttonTextStyle}
+      >
+        Log in
+      </FlatButton>
     </View>
   );
 }
 
 export default AuthForm;
-
-const styles = StyleSheet.create({
-  authForm: {
-    width: "100%",
-    alignItems: "center",
-  },
-  input: {
-    backgroundColor: "#fbfbfb",
-    borderRadius: 4,
-    borderWidth: 0.5,
-    width: "90%",
-    marginBottom: 24,
-    height: 48,
-    paddingHorizontal: 10,
-    paddingVertical: 3,
-    justifyContent: "center",
-  },
-  smallText: {
-    marginBottom: 5,
-    fontWeight: "100",
-    fontSize: 10,
-  },
-  textInput: {
-    fontSize: 17,
-  },
-  button: {
-    backgroundColor: "#bbaaf3",
-    width: "90%",
-    height: 48,
-    borderRadius: 4,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
