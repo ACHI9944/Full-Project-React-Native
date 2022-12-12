@@ -4,26 +4,25 @@ const InputStyle = StyleSheet.create({
   input: {
     backgroundColor: "#fbfbfb",
     borderRadius: 4,
-    borderWidth: 0.5,
+
     width: "90%",
     height: 48,
     paddingHorizontal: 10,
     paddingVertical: 3,
     justifyContent: "center",
+    marginBottom: 30,
+    elevation: 2,
   },
   errorInput: {
+    borderWidth: 2,
     borderColor: "red",
+  },
+  correctInput: {
+    borderWidth: 2,
+    borderColor: "#59cada",
   },
   textInput: {
     fontSize: 20,
-  },
-  errorMessageView: {
-    width: "90%",
-  },
-  errorMessage: {
-    color: "red",
-    alignSelf: "stretch",
-    marginTop: 3,
   },
 });
 

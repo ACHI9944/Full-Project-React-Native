@@ -1,10 +1,10 @@
 import { Pressable, Text, View } from "react-native";
 
-function SmallButton({ text, textStyle }) {
+function SmallButton({ children, textStyle, onPress }) {
   return (
-    <Pressable>
+    <Pressable onPress={onPress}>
       <View>
-        <Text style={textStyle}>{text}</Text>
+        <Text style={textStyle}>{children}</Text>
       </View>
     </Pressable>
   );

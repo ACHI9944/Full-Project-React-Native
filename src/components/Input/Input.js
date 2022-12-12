@@ -1,10 +1,17 @@
 import { Controller } from "react-hook-form";
-import { Text, TextInput, View } from "react-native";
+import { TextInput, View } from "react-native";
 import InputStyle from "./InputStyle";
 
 const styles = InputStyle;
 
-function Input({ control, name, rules = {}, placeholder, keyboardType }) {
+function Input({
+  control,
+  name,
+  rules = {},
+  placeholder,
+  keyboardType,
+  isValid,
+}) {
   return (
     <Controller
       control={control}
@@ -12,10 +19,19 @@ function Input({ control, name, rules = {}, placeholder, keyboardType }) {
       rules={rules}
       render={({
         field: { value, onChange, onBlur },
-        fieldState: { error },
+        fieldState: { isDirty, isTouched },
       }) => (
         <>
-          <View style={[styles.input, error && styles.errorInput]}>
+          <View
+            style={[
+              styles.input,
+              !isValid && isDirty && isTouched
+                ? styles.errorInput
+                : isValid && isDirty && isTouched
+                ? styles.correctInput
+                : null,
+            ]}
+          >
             <TextInput
               onChangeText={onChange}
               onBlur={onBlur}
@@ -24,13 +40,6 @@ function Input({ control, name, rules = {}, placeholder, keyboardType }) {
               style={styles.textInput}
               keyboardType={keyboardType}
             />
-          </View>
-          <View style={styles.errorMessageView}>
-            {error && (
-              <Text style={styles.errorMessage}>
-                {error.message || "Error"}
-              </Text>
-            )}
           </View>
         </>
       )}

@@ -1,18 +1,18 @@
 import { StyleSheet } from "react-native";
 
-const AuthFormStyle = StyleSheet.create({
-  authForm: {
+const SignupFormStyle = StyleSheet.create({
+  screen: {
+    width: "100%",
+    height: "100%",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  signupForm: {
     width: "100%",
     alignItems: "center",
   },
-  smallText: {
-    marginBottom: 5,
-    fontWeight: "100",
-    fontSize: 10,
-  },
-  textInput: {
-    fontSize: 17,
-  },
+
   button: {
     backgroundColor: "#bbaaf3",
     width: "90%",
@@ -39,4 +39,4 @@ const AuthFormStyle = StyleSheet.create({
   },
 });
 
-export default AuthFormStyle;
+export default SignupFormStyle;

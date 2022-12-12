@@ -1,6 +1,9 @@
 import { StyleSheet } from "react-native";
 
 const LoginScreenStyle = StyleSheet.create({
+  keyboardAvoidingView: {
+    flex: 1,
+  },
   screen: {
     flex: 1,
     alignItems: "center",
@@ -23,7 +26,7 @@ const LoginScreenStyle = StyleSheet.create({
   },
   authForm: {
     width: "100%",
-    marginBottom: 100,
+    marginBottom: 120,
   },
   bottomText: {
     flexDirection: "row",
