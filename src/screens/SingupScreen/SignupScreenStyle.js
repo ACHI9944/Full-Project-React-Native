@@ -7,6 +7,7 @@ const SignupScreenStyle = StyleSheet.create({
   screen: {
     flex: 1,
     flexDirection: "column",
+    backgroundColor: "white",
   },
   topBar: {
     flex: 1,
@@ -14,11 +15,6 @@ const SignupScreenStyle = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     marginBottom: 10,
-  },
-  icon: {
-    position: "absolute",
-    top: 6,
-    left: 15,
   },
   header: {
     fontSize: 16,
@@ -38,7 +34,7 @@ const SignupScreenStyle = StyleSheet.create({
     fontWeight: "400",
   },
   signupForm: {
-    flex: 2.2,
+    flex: 2.7,
     alignItems: "center",
     justifyContent: "center",
   },

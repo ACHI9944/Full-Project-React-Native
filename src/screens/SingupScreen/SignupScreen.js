@@ -1,14 +1,15 @@
 import { KeyboardAvoidingView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SignupScreenStyle from "./SignupScreenStyle";
-import SignupForm from "../../components/SignupForm/SignupForm";
 import AbsoluteIconButton from "../../components/ui/AbsoluteIconButton";
+import { useNavigation } from "@react-navigation/native";
 
 const styles = SignupScreenStyle;
 
-function SingupScreen({ navigation }) {
+function SingupScreen({ largeText, smallText, SignupForm, navigateTo }) {
+  const navigation = useNavigation();
   function goBack() {
-    navigation.navigate("login");
+    navigation.navigate(navigateTo);
   }
   return (
     <KeyboardAvoidingView
@@ -27,10 +28,8 @@ function SingupScreen({ navigation }) {
           />
           <Text style={styles.header}>Sign Up</Text>
           <View style={styles.texts}>
-            <Text style={styles.welcomeText}>Welcome!</Text>
-            <Text style={styles.infoText}>
-              Enter your account information first
-            </Text>
+            <Text style={styles.welcomeText}>{largeText}</Text>
+            <Text style={styles.infoText}>{smallText}</Text>
           </View>
         </View>
 

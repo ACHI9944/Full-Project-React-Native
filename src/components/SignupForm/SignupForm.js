@@ -1,36 +1,42 @@
+import { useNavigation } from "@react-navigation/native";
 import { useForm } from "react-hook-form";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import Input from "../Input/Input";
 import FlatButton from "../ui/FlatButton";
+import {
+  nameValidation,
+  emailValidation,
+  phoneValidation,
+} from "../ui/Validation";
 import SignupFormStyle from "./SignupFormStyle";
 
 const styles = SignupFormStyle;
 
-const PHONE_REGEX = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
 function SignupForm() {
+  const navigation = useNavigation();
+
   const { control, handleSubmit, formState, watch } = useForm();
-  const businessNameText = watch("businessName");
-  const number = watch("phone");
+  const businessName = watch("businessName");
+  const phone = watch("phone");
   const email = watch("Email");
 
-  const emailisValid = !!email && email.match(EMAIL_REGEX);
-  const numberIsValid = !!number && number.match(PHONE_REGEX);
-
-  function manageInputHandler(data) {}
+  function manageInputHandler(data) {
+    navigation.navigate("singup2");
+  }
   return (
-    <View style={styles.screen}>
-      <View style={styles.signupForm}>
+    <>
+      <ScrollView
+        contentContainerStyle={styles.screencontent}
+        style={styles.screen}
+      >
         <Input
           name="businessName"
           placeholder="Business name"
           keyboardType="default"
           control={control}
-          isValid={!!businessNameText && businessNameText.length >= 5}
+          isValid={nameValidation(businessName)}
           rules={{
-            required: true,
-            minLength: "5",
+            validate: (value) => nameValidation(value),
           }}
         />
         <Input
@@ -38,10 +44,9 @@ function SignupForm() {
           placeholder="Phone number"
           keyboardType="numbers-and-punctuation"
           control={control}
-          isValid={!!number && numberIsValid}
+          isValid={phoneValidation(phone)}
           rules={{
-            required: true,
-            pattern: PHONE_REGEX,
+            validate: (value) => phoneValidation(value),
           }}
         />
         <Input
@@ -49,14 +54,12 @@ function SignupForm() {
           placeholder="Email address"
           keyboardType="email-address"
           control={control}
-          isValid={emailisValid}
+          isValid={emailValidation(email)}
           rules={{
-            required: true,
-            pattern: EMAIL_REGEX,
+            validate: (value) => emailValidation(value),
           }}
         />
-      </View>
-
+      </ScrollView>
       <FlatButton
         disabled={!formState.isValid}
         onPress={handleSubmit(manageInputHandler)}
@@ -66,7 +69,7 @@ function SignupForm() {
       >
         Next
       </FlatButton>
-    </View>
+    </>
   );
 }
 

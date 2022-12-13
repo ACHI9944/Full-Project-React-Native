@@ -4,14 +4,17 @@ const InputStyle = StyleSheet.create({
   input: {
     backgroundColor: "#fbfbfb",
     borderRadius: 4,
-
     width: "90%",
-    height: 48,
+    height: 56,
     paddingHorizontal: 10,
     paddingVertical: 3,
     justifyContent: "center",
-    marginBottom: 30,
+    marginBottom: 15,
     elevation: 2,
+  },
+  innerText: {
+    fontWeight: "100",
+    fontSize: 12,
   },
   errorInput: {
     borderWidth: 2,
@@ -22,7 +25,8 @@ const InputStyle = StyleSheet.create({
     borderColor: "#59cada",
   },
   textInput: {
-    fontSize: 20,
+    fontSize: 18,
+    fontWeight: "300",
   },
 });
 
