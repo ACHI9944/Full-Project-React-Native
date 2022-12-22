@@ -1,15 +1,57 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
-const SignupForm2Style = StyleSheet.create({
+const SingupModalTwoStyle = StyleSheet.create({
+  keyboardAvoidingView: {
+    flex: 1,
+  },
+  safeAreaView: {
+    flex: 1,
+    marginVertical: Platform.OS === "ios" ? 30 : null,
+  },
+  topBar: {
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    marginBottom: 10,
+  },
+  header: {
+    fontSize: 16,
+    fontWeight: "500",
+    marginTop: 10,
+  },
+  texts: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  welcomeText: {
+    fontSize: 35,
+    fontWeight: "500",
+  },
+  infoText: {
+    fontSize: 17,
+    fontWeight: "400",
+  },
+  signupForm: {
+    flex: 2.7,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   screen: {
     width: "100%",
     height: "100%",
-    flexDirection: "column",
-    alignItems: "center",
   },
-  signupForm: {
-    width: "100%",
+  screencontent: {
+    flexDirection: "column",
+    justifyContent: "space-between",
     alignItems: "center",
+    width: "100%",
+  },
+  inputs: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
   },
   details: {
     width: "90%",
@@ -26,8 +68,8 @@ const SignupForm2Style = StyleSheet.create({
     borderRadius: 4,
     alignItems: "center",
     justifyContent: "center",
-    position: "absolute",
-    bottom: 8,
+    marginTop: 20,
+    marginBottom: 5,
   },
   pressedStyle: {
     backgroundColor: "#bbaaf3",
@@ -37,8 +79,8 @@ const SignupForm2Style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     opacity: 0.9,
-    position: "absolute",
-    bottom: 8,
+    marginTop: 20,
+    marginBottom: 5,
   },
   validStyle: {
     backgroundColor: "#542ee0",
@@ -62,7 +104,7 @@ const SignupForm2Style = StyleSheet.create({
   agree: {
     width: "90%",
     paddingVertical: 10,
-    marginBottom: 80,
+
     color: "#bbaaf3",
     fontSize: 20,
     fontWeight: "100",
@@ -70,4 +112,4 @@ const SignupForm2Style = StyleSheet.create({
   },
 });
 
-export default SignupForm2Style;
+export default SingupModalTwoStyle;
