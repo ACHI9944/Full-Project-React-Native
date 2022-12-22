@@ -1,12 +1,14 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import {
   KeyboardAvoidingView,
   Modal,
+  Pressable,
   ScrollView,
   Text,
   View,
 } from "react-native";
+import { Modalize } from "react-native-modalize";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { SingupContext } from "../../../context/Singup-Context";
 import Input from "../../Input/Input";
@@ -33,6 +35,11 @@ function SingupModalTwo() {
     authCtx.ToggleSingupTwo();
     authCtx.ToggleSingupOne();
   }
+  const modalizeRef = useRef(null);
+
+  const onOpen = () => {
+    modalizeRef.current?.open();
+  };
   function manageInputHandler(data) {}
   return (
     <Modal visible={authCtx.singupTwoIsVisible} animationType="slide">
@@ -58,7 +65,20 @@ function SingupModalTwo() {
               </Text>
             </View>
           </View>
+          <View>
+            <Pressable onPress={onOpen}>
+              <Text style={{ fontSize: 50 }}>modal</Text>
+            </Pressable>
+          </View>
 
+          <Modalize ref={modalizeRef} modalHeight={200}>
+            <View style={{ flex: 0.5 }}>
+              <Text>modal</Text>
+              <Text>modal</Text>
+              <Text>modal</Text>
+              <Text>modal</Text>
+            </View>
+          </Modalize>
           <View style={styles.signupForm}>
             <ScrollView
               contentContainerStyle={styles.screencontent}
