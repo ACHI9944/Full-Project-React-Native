@@ -1,116 +1,78 @@
-import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import {
-  KeyboardAvoidingView,
-  Modal,
-  ScrollView,
-  Text,
-  View,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { SingupContext } from "../../../context/Singup-Context";
+import { ScrollView, Text, View } from "react-native";
 import Input from "../../Input/Input";
-import AbsoluteIconButton from "../../ui/AbsoluteIconButton";
 import FlatButton from "../../ui/FlatButton";
-import {
-  emailValidation,
-  nameValidation,
-  phoneValidation,
-} from "../../ui/Validation";
+import { emailVal, nameVal, phoneVal } from "../../ui/Validation";
 import SingupModalOneStyle from "./SingupModalOneStyle";
 
 const styles = SingupModalOneStyle;
 
-function SingupModalOne() {
+function SingupModalOne({ nextPage }) {
   const { control, handleSubmit, formState, watch } = useForm();
   const businessName = watch("businessName");
   const phone = watch("phone");
   const email = watch("Email");
 
-  const authCtx = useContext(SingupContext);
-  function goBack() {
-    authCtx.ToggleSingupOne();
-  }
   function manageInputHandler(data) {
-    authCtx.ToggleSingupOne();
-    authCtx.ToggleSingupTwo();
+    nextPage();
   }
   return (
-    <Modal visible={authCtx.singupOneIsVisible} animationType="slide">
-      <KeyboardAvoidingView
-        style={styles.keyboardAvoidingView}
-        behavior={Platform.OS === "ios" ? "padding" : null}
-      >
-        <SafeAreaView style={styles.safeAreaView}>
-          <View style={styles.topBar}>
-            <AbsoluteIconButton
-              top={6}
-              left={15}
-              name="ios-chevron-down"
-              size={24}
-              color="black"
-              onPress={goBack}
+    <>
+      <View style={styles.texts}>
+        <Text style={styles.welcomeText}>Welcome!</Text>
+        <Text style={styles.infoText}>
+          Enter your account information first
+        </Text>
+      </View>
+      <View style={styles.signupForm}>
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          style={styles.scrollStyle}
+        >
+          <View style={styles.inputs}>
+            <Input
+              name="businessName"
+              placeholder="Business name"
+              keyboardType="default"
+              control={control}
+              isValid={nameVal(businessName)}
+              rules={{
+                validate: (value) => nameVal(value),
+              }}
             />
-            <Text style={styles.header}>Sign Up</Text>
-            <View style={styles.texts}>
-              <Text style={styles.welcomeText}>Welcome!</Text>
-              <Text style={styles.infoText}>
-                Enter your account information first
-              </Text>
-            </View>
+            <Input
+              name="phone"
+              placeholder="Phone number"
+              keyboardType="numbers-and-punctuation"
+              control={control}
+              isValid={phoneVal(phone)}
+              rules={{
+                validate: (value) => phoneVal(value),
+              }}
+            />
+            <Input
+              name="Email"
+              placeholder="Email address"
+              keyboardType="email-address"
+              control={control}
+              isValid={emailVal(email)}
+              rules={{
+                validate: (value) => emailVal(value),
+              }}
+            />
           </View>
-
-          <View style={styles.signupForm}>
-            <ScrollView
-              contentContainerStyle={styles.screencontent}
-              style={styles.screen}
-            >
-              <View style={styles.inputs}>
-                <Input
-                  name="businessName"
-                  placeholder="Business name"
-                  keyboardType="default"
-                  control={control}
-                  isValid={nameValidation(businessName)}
-                  rules={{
-                    validate: (value) => nameValidation(value),
-                  }}
-                />
-                <Input
-                  name="phone"
-                  placeholder="Phone number"
-                  keyboardType="numbers-and-punctuation"
-                  control={control}
-                  isValid={phoneValidation(phone)}
-                  rules={{
-                    validate: (value) => phoneValidation(value),
-                  }}
-                />
-                <Input
-                  name="Email"
-                  placeholder="Email address"
-                  keyboardType="email-address"
-                  control={control}
-                  isValid={emailValidation(email)}
-                  rules={{
-                    validate: (value) => emailValidation(value),
-                  }}
-                />
-              </View>
-              <FlatButton
-                disabled={!formState.isValid}
-                onPress={handleSubmit(manageInputHandler)}
-                style={[styles.button, formState.isValid && styles.validStyle]}
-                pressedStyle={styles.pressedStyle}
-                buttonTextStyle={styles.buttonTextStyle}
-              >
-                Next
-              </FlatButton>
-            </ScrollView>
-          </View>
-        </SafeAreaView>
-      </KeyboardAvoidingView>
-    </Modal>
+          <FlatButton
+            disabled={!formState.isValid}
+            onPress={handleSubmit(manageInputHandler)}
+            style={[styles.button, formState.isValid && styles.validStyle]}
+            pressedStyle={styles.pressedStyle}
+            buttonTextStyle={styles.buttonTextStyle}
+          >
+            Next
+          </FlatButton>
+        </ScrollView>
+      </View>
+    </>
   );
 }
 

@@ -3,25 +3,25 @@ const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const DOMAIN_REGEX =
   /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/;
 
-export function nameValidation(value) {
+export function nameVal(value) {
   if (!!value && value.length >= 5) {
     return true;
   } else return false;
 }
 
-export function phoneValidation(value) {
+export function phoneVal(value) {
   if (!!value && value.match(PHONE_REGEX)) {
     return true;
   } else return false;
 }
 
-export function emailValidation(value) {
+export function emailVal(value) {
   if (!!value && value.match(EMAIL_REGEX)) {
     return true;
   } else return false;
 }
 
-export function domainValidation(value) {
+export function domainVal(value) {
   if (!!value && value.match(DOMAIN_REGEX)) {
     return true;
   } else return false;

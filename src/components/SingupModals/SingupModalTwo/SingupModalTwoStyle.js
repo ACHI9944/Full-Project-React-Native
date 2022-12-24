@@ -1,20 +1,6 @@
 import { Platform, StyleSheet } from "react-native";
 
 const SingupModalTwoStyle = StyleSheet.create({
-  keyboardAvoidingView: {
-    flex: 1,
-  },
-  safeAreaView: {
-    flex: 1,
-    marginVertical: Platform.OS === "ios" ? 30 : null,
-  },
-  topBar: {
-    flex: 1,
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    marginBottom: 10,
-  },
   header: {
     fontSize: 16,
     fontWeight: "500",
@@ -33,19 +19,17 @@ const SingupModalTwoStyle = StyleSheet.create({
     fontWeight: "400",
   },
   signupForm: {
-    flex: 2.7,
+    flex: 4.5,
     alignItems: "center",
-    justifyContent: "center",
   },
-  screen: {
-    width: "100%",
-    height: "100%",
-  },
-  screencontent: {
+  scrollContent: {
+    alignItems: "center",
     flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: "center",
+  },
+  scrollStyle: {
     width: "100%",
+    height: "100%",
   },
   inputs: {
     flexDirection: "column",
@@ -59,7 +43,7 @@ const SingupModalTwoStyle = StyleSheet.create({
   },
   detailsText: {
     fontSize: 20,
-    fontWeight: "100",
+    fontWeight: "200",
   },
   button: {
     backgroundColor: "#bbaaf3",
@@ -69,7 +53,7 @@ const SingupModalTwoStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 20,
-    marginBottom: 5,
+    marginBottom: 25,
   },
   pressedStyle: {
     backgroundColor: "#bbaaf3",
@@ -89,25 +73,78 @@ const SingupModalTwoStyle = StyleSheet.create({
     color: "white",
     fontSize: 17,
   },
+  businessType: {
+    width: "90%",
+    height: 56,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    marginBottom: 15,
+    backgroundColor: "#fbfbfb",
+    justifyContent: "center",
+  },
+  businessTypeText: {
+    fontSize: 20,
+    fontWeight: "300",
+    color: "#bfbfbf",
+  },
+  chosenBusiness: {
+    fontSize: 18,
+    fontWeight: "300",
+  },
+  modalInnerText: {
+    fontWeight: "100",
+    fontSize: 12,
+  },
+  businessModal: {
+    backgroundColor: "#eaeaea",
+    flex: 0.47,
+  },
   budgetInputs: {
     width: "90%",
     flexDirection: "row",
-    justifyContent: "space-between",
   },
   budget: {
-    flex: 3.2,
+    flex: 4,
   },
-  unit: {
+  currency: {
     flex: 1,
-    flexDirection: "row-reverse",
+    height: 56,
+    margin: 0,
+    paddingVertical: 3,
+    backgroundColor: "#fbfbfb",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 5,
+  },
+  currencyText: {
+    fontSize: 18,
+    fontWeight: "300",
+  },
+  currencyModal: {
+    backgroundColor: "#eaeaea",
+    flex: 0.4,
+  },
+  terms: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "90%",
+  },
+  checkBox: {
+    borderWidth: 1.2,
+    borderColor: "#bbaaf3",
+    width: 22,
+    height: 22,
+    alignItems: "center",
+    justifyContent: "center",
   },
   agree: {
     width: "90%",
     paddingVertical: 10,
-
     color: "#bbaaf3",
-    fontSize: 20,
-    fontWeight: "100",
+    fontSize: 17,
+    fontWeight: "200",
     marginLeft: 30,
   },
 });

@@ -1,26 +1,8 @@
-import { Platform, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 const SingupModalOneStyle = StyleSheet.create({
-  keyboardAvoidingView: {
-    flex: 1,
-  },
-  safeAreaView: {
-    flex: 1,
-    marginVertical: Platform.OS === "ios" ? 30 : null,
-  },
-  topBar: {
-    flex: 1,
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    marginBottom: 10,
-  },
-  header: {
-    fontSize: 16,
-    fontWeight: "500",
-    marginTop: 10,
-  },
   texts: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -33,18 +15,17 @@ const SingupModalOneStyle = StyleSheet.create({
     fontWeight: "400",
   },
   signupForm: {
-    flex: 2.7,
+    flex: 4.5,
     alignItems: "center",
-    justifyContent: "center",
   },
-  screen: {
+  scrollContent: {
     width: "100%",
     height: "100%",
-  },
-  screencontent: {
+    alignItems: "center",
     flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: "center",
+  },
+  scrollStyle: {
     width: "100%",
     height: "100%",
   },
@@ -62,7 +43,7 @@ const SingupModalOneStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 20,
-    marginBottom: 5,
+    marginBottom: 25,
   },
   pressedStyle: {
     backgroundColor: "#bbaaf3",
@@ -73,7 +54,7 @@ const SingupModalOneStyle = StyleSheet.create({
     justifyContent: "center",
     opacity: 0.9,
     marginTop: 20,
-    marginBottom: 5,
+    marginBottom: 10,
   },
   validStyle: {
     backgroundColor: "#542ee0",

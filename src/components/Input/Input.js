@@ -20,15 +20,15 @@ function Input({
       rules={rules}
       render={({
         field: { value, onChange, onBlur },
-        fieldState: { isDirty },
+        fieldState: { isTouched },
       }) => (
         <>
           <View
             style={[
               styles.input,
-              !isValid && isDirty
+              !isValid && isTouched
                 ? styles.errorInput
-                : isValid && isDirty
+                : isValid && isTouched
                 ? styles.correctInput
                 : null,
             ]}

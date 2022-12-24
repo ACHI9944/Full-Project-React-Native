@@ -1,13 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SingupContextProvider from "../context/Singup-Context";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import LoginScreen from "../screens/LoginScreen/LoginScreen";
 
 const Stack = createNativeStackNavigator();
 
 function Navigation() {
   return (
-    <SingupContextProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
@@ -17,7 +17,7 @@ function Navigation() {
           />
         </Stack.Navigator>
       </NavigationContainer>
-    </SingupContextProvider>
+    </GestureHandlerRootView>
   );
 }
 
