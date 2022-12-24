@@ -1,27 +1,29 @@
 import { Image, KeyboardAvoidingView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useContext } from "react";
-import { SingupContext } from "../../context/Singup-Context";
 import GradientText from "../../components/ui/GradientText";
 import SmallButton from "../../components/ui/SmallButton";
 import AuthForm from "../../components/AuthForm/AuthForm";
 import LoginScreenStyle from "./LoginScreenStyle";
-import SingupModalOne from "../../components/SingupModals/SingupModalOne/SingupModalOne";
-import SingupModalTwo from "../../components/SingupModals/SingupModalTwo/SingupModalTwo";
+import MainModal from "../../components/SingupModals/MainModal/MainModal";
+import { useState } from "react";
 
 const styles = LoginScreenStyle;
 
 function LoginScreen() {
-  const authCtx = useContext(SingupContext);
-
+  const [modalIsShown, setModalIsShown] = useState(false);
   function singupHandler() {
-    authCtx.ToggleSingupOne();
+    setModalIsShown(true);
+  }
+  function closeModalHandler() {
+    setModalIsShown(false);
   }
 
   return (
     <>
-      <SingupModalOne />
-      <SingupModalTwo />
+      <MainModal
+        modalIsShown={modalIsShown}
+        closeModalHandler={closeModalHandler}
+      />
 
       <KeyboardAvoidingView
         style={styles.keyboardAvoidingView}
