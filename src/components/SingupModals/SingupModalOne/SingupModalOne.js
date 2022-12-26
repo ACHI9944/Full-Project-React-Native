@@ -2,25 +2,29 @@ import { useForm } from "react-hook-form";
 import { ScrollView, Text, View } from "react-native";
 import Input from "../../Input/Input";
 import FlatButton from "../../ui/FlatButton";
-import { emailVal, nameVal, phoneVal } from "../../ui/Validation";
+import { emailVal, nameVal, passVal, phoneVal, rep } from "../../ui/Validation";
 import SingupModalOneStyle from "./SingupModalOneStyle";
 
 const styles = SingupModalOneStyle;
 
-function SingupModalOne({ nextPage }) {
+function SingupModalOne({ nextPage, setValues }) {
   const { control, handleSubmit, formState, watch } = useForm();
   const businessName = watch("businessName");
   const phone = watch("phone");
-  const email = watch("Email");
+  const email = watch("email");
+  const repEmail = watch("repEmail");
+  const password = watch("password");
+  const repPass = watch("repPass");
 
   function manageInputHandler(data) {
+    setValues((prevValues) => ({ ...prevValues, ...data }));
     nextPage();
   }
   return (
     <>
       <View style={styles.texts}>
-        <Text style={styles.welcomeText}>Welcome!</Text>
-        <Text style={styles.infoText}>
+        <Text style={styles.largeText}>Welcome!</Text>
+        <Text style={styles.smallText}>
           Enter your account information first
         </Text>
       </View>
@@ -51,13 +55,43 @@ function SingupModalOne({ nextPage }) {
               }}
             />
             <Input
-              name="Email"
-              placeholder="Email address"
+              name="email"
+              placeholder="Email Address"
               keyboardType="email-address"
               control={control}
               isValid={emailVal(email)}
               rules={{
                 validate: (value) => emailVal(value),
+              }}
+            />
+            <Input
+              name="repEmail"
+              placeholder="Repeat Email Address"
+              keyboardType="email-address"
+              control={control}
+              isValid={rep(repEmail, email)}
+              rules={{
+                validate: (value) => rep(value, email),
+              }}
+            />
+            <Input
+              name="password"
+              placeholder="Password"
+              keyboardType="default"
+              control={control}
+              isValid={passVal(password)}
+              rules={{
+                validate: (value) => passVal(value),
+              }}
+            />
+            <Input
+              name="repPass"
+              placeholder="Repeat Passord"
+              keyboardType="default"
+              control={control}
+              isValid={rep(repPass, password)}
+              rules={{
+                validate: (value) => rep(value, password),
               }}
             />
           </View>

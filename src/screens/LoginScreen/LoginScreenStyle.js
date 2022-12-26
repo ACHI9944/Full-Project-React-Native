@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
 
 const LoginScreenStyle = StyleSheet.create({
-  keyboardAvoidingView: {
+  safeAreaView: {
     flex: 1,
+    backgroundColor: "white",
   },
-  screen: {
+  keyboardAvoidingView: {
     flex: 1,
     alignItems: "center",
     backgroundColor: "white",
@@ -13,6 +14,7 @@ const LoginScreenStyle = StyleSheet.create({
   imageAndText: {
     alignItems: "center",
     marginTop: 70,
+    marginBottom: 5,
   },
 
   image: {
@@ -27,9 +29,11 @@ const LoginScreenStyle = StyleSheet.create({
   authForm: {
     width: "100%",
     marginBottom: 120,
+    marginTop: 5,
   },
   bottomText: {
     flexDirection: "row",
+    marginBottom: 5,
   },
   smallText: {
     fontSize: 15,

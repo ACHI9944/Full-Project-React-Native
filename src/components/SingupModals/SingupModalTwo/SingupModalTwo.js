@@ -13,16 +13,18 @@ import SingupModalTwoStyle from "./SingupModalTwoStyle";
 
 const styles = SingupModalTwoStyle;
 
-function SingupModalTwo() {
+function SingupModalTwo({ setValues, submitInputs }) {
+  // Controlling and handling inputs
   const { control, handleSubmit, formState, watch } = useForm();
   const address = watch("address");
-  const zipCode = watch("zipcode");
+  const zipCode = watch("zipCode");
   const website = watch("website");
   const instagram = watch("instagram");
   const contactName = watch("contactName");
   const contactUsername = watch("contactUsername");
   const budget = watch("budget");
 
+  // Controlling Modalize.
   const modalizeRefBusiness = useRef(null);
   const modalizeRefCurrency = useRef(null);
 
@@ -39,20 +41,31 @@ function SingupModalTwo() {
     modalizeRefCurrency.current?.close();
   }
 
-  const [businessModal, setBusinessModal] = useState("");
-  const [currencyModal, setCurrencyModal] = useState("USD");
+  const [businessType, setBusinessModal] = useState("");
+  const [cyrrency, setCurrencyModal] = useState("USD");
 
+  //Controlling checkbox for agreeing terms
   const [checkIsShown, setcheckIsShown] = useState(false);
   function toggleTerms() {
     setcheckIsShown((prevValue) => !prevValue);
   }
 
-  function manageInputHandler(data) {}
+  //Managing all inputs
+  function manageInputHandler(data) {
+    setValues((prevValues) => ({
+      ...prevValues,
+      ...data,
+      businessType,
+      cyrrency,
+    }));
+    submitInputs();
+  }
+
   return (
     <>
       <View style={styles.texts}>
-        <Text style={styles.welcomeText}>Welcome!</Text>
-        <Text style={styles.infoText}>
+        <Text style={styles.largeText}>Welcome!</Text>
+        <Text style={styles.smallText}>
           Enter your account information first
         </Text>
       </View>
@@ -78,8 +91,8 @@ function SingupModalTwo() {
               }}
             />
             <Input
-              name="zipcode"
-              placeholder="Zipcode"
+              name="zipCode"
+              placeholder="zipCode"
               keyboardType="default"
               control={control}
               isValid={!!zipCode}
@@ -132,12 +145,12 @@ function SingupModalTwo() {
               style={styles.businessType}
               onPress={onOpenBusinessModal}
             >
-              {!businessModal ? (
+              {!businessType ? (
                 <Text style={styles.businessTypeText}>Type of business</Text>
               ) : (
                 <>
                   <Text style={styles.modalInnerText}>Type of business</Text>
-                  <Text style={styles.chosenBusiness}>{businessModal}</Text>
+                  <Text style={styles.chosenBusiness}>{businessType}</Text>
                 </>
               )}
             </Pressable>
@@ -156,7 +169,7 @@ function SingupModalTwo() {
                 />
               </View>
               <Pressable style={styles.currency} onPress={onOpenCurModal}>
-                <Text style={styles.currencyText}>{currencyModal}</Text>
+                <Text style={styles.currencyText}>{cyrrency}</Text>
                 <CurrencyIcon />
               </Pressable>
             </View>
@@ -181,17 +194,25 @@ function SingupModalTwo() {
         </ScrollView>
       </View>
 
-      <Modalize ref={modalizeRefBusiness} modalStyle={styles.businessModal}>
+      <Modalize
+        ref={modalizeRefBusiness}
+        modalStyle={styles.businessModal}
+        adjustToContentHeight={true}
+      >
         <BusinessSelectModal
           onSetBusinessModal={setBusinessModal}
-          businessModal={businessModal}
+          businessModal={businessType}
           onCancelBusinessModal={onCancelBusinessModal}
         />
       </Modalize>
-      <Modalize ref={modalizeRefCurrency} modalStyle={styles.currencyModal}>
+      <Modalize
+        ref={modalizeRefCurrency}
+        modalStyle={styles.currencyModal}
+        adjustToContentHeight={true}
+      >
         <CurrencySelectModal
           onsetCurrencyModal={setCurrencyModal}
-          currencyModal={currencyModal}
+          currencyModal={cyrrency}
           onCancelCurModal={onCancelCurModal}
         />
       </Modalize>

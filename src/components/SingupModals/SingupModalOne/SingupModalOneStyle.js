@@ -6,11 +6,11 @@ const SingupModalOneStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  welcomeText: {
+  largeText: {
     fontSize: 35,
     fontWeight: "500",
   },
-  infoText: {
+  smallText: {
     fontSize: 17,
     fontWeight: "400",
   },
@@ -19,11 +19,8 @@ const SingupModalOneStyle = StyleSheet.create({
     alignItems: "center",
   },
   scrollContent: {
-    width: "100%",
-    height: "100%",
     alignItems: "center",
     flexDirection: "column",
-    justifyContent: "space-between",
   },
   scrollStyle: {
     width: "100%",
@@ -43,7 +40,6 @@ const SingupModalOneStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 20,
-    marginBottom: 25,
   },
   pressedStyle: {
     backgroundColor: "#bbaaf3",
@@ -54,7 +50,6 @@ const SingupModalOneStyle = StyleSheet.create({
     justifyContent: "center",
     opacity: 0.9,
     marginTop: 20,
-    marginBottom: 10,
   },
   validStyle: {
     backgroundColor: "#542ee0",

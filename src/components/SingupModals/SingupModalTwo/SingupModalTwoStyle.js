@@ -1,20 +1,16 @@
 import { Platform, StyleSheet } from "react-native";
 
 const SingupModalTwoStyle = StyleSheet.create({
-  header: {
-    fontSize: 16,
-    fontWeight: "500",
-    marginTop: 10,
-  },
   texts: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
-  welcomeText: {
+  largeText: {
     fontSize: 35,
     fontWeight: "500",
   },
-  infoText: {
+  smallText: {
     fontSize: 17,
     fontWeight: "400",
   },
@@ -25,7 +21,6 @@ const SingupModalTwoStyle = StyleSheet.create({
   scrollContent: {
     alignItems: "center",
     flexDirection: "column",
-    justifyContent: "space-between",
   },
   scrollStyle: {
     width: "100%",
@@ -53,7 +48,6 @@ const SingupModalTwoStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 20,
-    marginBottom: 25,
   },
   pressedStyle: {
     backgroundColor: "#bbaaf3",
@@ -64,7 +58,6 @@ const SingupModalTwoStyle = StyleSheet.create({
     justifyContent: "center",
     opacity: 0.9,
     marginTop: 20,
-    marginBottom: 5,
   },
   validStyle: {
     backgroundColor: "#542ee0",
@@ -97,7 +90,6 @@ const SingupModalTwoStyle = StyleSheet.create({
   },
   businessModal: {
     backgroundColor: "#eaeaea",
-    flex: 0.47,
   },
   budgetInputs: {
     width: "90%",
@@ -123,7 +115,6 @@ const SingupModalTwoStyle = StyleSheet.create({
   },
   currencyModal: {
     backgroundColor: "#eaeaea",
-    flex: 0.4,
   },
   terms: {
     flexDirection: "row",
