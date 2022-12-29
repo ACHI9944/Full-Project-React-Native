@@ -16,7 +16,7 @@ const AuthFormStyle = StyleSheet.create({
   button: {
     backgroundColor: "#bbaaf3",
     width: "90%",
-    height: 48,
+    height: 56,
     borderRadius: 4,
     alignItems: "center",
     justifyContent: "center",
@@ -24,7 +24,7 @@ const AuthFormStyle = StyleSheet.create({
   pressedStyle: {
     backgroundColor: "#bbaaf3",
     width: "90%",
-    height: 48,
+    height: 56,
     borderRadius: 4,
     alignItems: "center",
     justifyContent: "center",

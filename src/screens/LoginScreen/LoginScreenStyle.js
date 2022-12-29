@@ -7,28 +7,20 @@ const LoginScreenStyle = StyleSheet.create({
   },
   keyboardAvoidingView: {
     flex: 1,
-    alignItems: "center",
     backgroundColor: "white",
+    alignItems: "center",
     justifyContent: "space-between",
   },
   imageAndText: {
+    flex: 1,
+    justifyContent: "center",
     alignItems: "center",
-    marginTop: 70,
     marginBottom: 5,
   },
 
-  image: {
-    width: 80,
-    height: 80,
-  },
-
-  gradientText: {
-    fontSize: 50,
-    fontFamily: "bona-nova",
-  },
   authForm: {
+    flex: 2,
     width: "100%",
-    marginBottom: 120,
     marginTop: 5,
   },
   bottomText: {

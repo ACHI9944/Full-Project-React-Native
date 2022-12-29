@@ -1,6 +1,4 @@
-import { Image, KeyboardAvoidingView, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import GradientText from "../../components/ui/GradientText";
+import { KeyboardAvoidingView, SafeAreaView, Text, View } from "react-native";
 import SmallButton from "../../components/ui/SmallButton";
 import AuthForm from "../../components/AuthForm/AuthForm";
 import LoginScreenStyle from "./LoginScreenStyle";
@@ -9,6 +7,7 @@ import { useContext, useState } from "react";
 import LoadingOverlay from "../../components/ui/LoadingOverlay";
 import { AuthContext } from "../../components/store/auth-context";
 import { login } from "../../components/util/auth";
+import LogoWithText from "../../components/LogoWithText/LogoWithText";
 
 const styles = LoginScreenStyle;
 
@@ -55,16 +54,7 @@ function LoginScreen() {
           behavior={"padding"}
         >
           <View style={styles.imageAndText}>
-            <Image
-              style={styles.image}
-              source={require("../../assets/318220879_704274267574962_4248918332260345559_n.png")}
-            />
-            <GradientText
-              gradientColors={["#3a5bd9", "#02b3c9"]}
-              textStyle={styles.gradientText}
-            >
-              instans.ai
-            </GradientText>
+            <LogoWithText />
           </View>
 
           <View style={styles.authForm}>

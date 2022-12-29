@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import AuthContextProvider from "./src/components/store/auth-context";
@@ -17,7 +18,9 @@ export default function App() {
     <>
       <StatusBar style="dark" />
       <AuthContextProvider>
-        <Navigation />
+        <NavigationContainer>
+          <Navigation />
+        </NavigationContainer>
       </AuthContextProvider>
     </>
   );
