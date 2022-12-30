@@ -17,7 +17,7 @@ const AuthenticatedHeaderStyle = StyleSheet.create({
   imageView: {
     width: 35,
     height: 35,
-    marginHorizontal: 10,
+    marginHorizontal: 15,
   },
   image: {
     width: "100%",

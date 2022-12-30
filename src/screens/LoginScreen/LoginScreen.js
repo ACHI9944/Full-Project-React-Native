@@ -1,14 +1,13 @@
 import { KeyboardAvoidingView, SafeAreaView, Text, View } from "react-native";
-import SmallButton from "../../components/ui/SmallButton";
-import AuthForm from "../../components/AuthForm/AuthForm";
-import LoginScreenStyle from "./LoginScreenStyle";
-import MainModal from "../../components/SingupModals/MainModal/MainModal";
 import { useContext, useState } from "react";
-import LoadingOverlay from "../../components/ui/LoadingOverlay";
 import { AuthContext } from "../../components/store/auth-context";
 import { login } from "../../components/util/auth";
-import LogoWithText from "../../components/LogoWithText/LogoWithText";
-
+import LoginScreenStyle from "./LoginScreenStyle";
+import MainModal from "../../components/LoginScreenComponents/MainModal/MainModal";
+import LoadingOverlay from "../../components/ui/LoadingOverlay";
+import LogoWithText from "../../components/LoginScreenComponents/LogoWithText/LogoWithText";
+import SmallButton from "../../components/ui/SmallButton";
+import AuthForm from "../../components/LoginScreenComponents/AuthForm/AuthForm";
 const styles = LoginScreenStyle;
 
 function LoginScreen() {
@@ -26,9 +25,12 @@ function LoginScreen() {
   async function manageInputHandler({ email, password }) {
     setIsAuthenticating(true);
     try {
-      const token = await login(email, password);
-      authCtx.authenticate(token);
+      const response = await login(email, password);
       setIsAuthenticating(false);
+      const token = response.data.idToken;
+      if (!!token) {
+        authCtx.authenticate(token);
+      } else return;
     } catch (error) {
       Alert.alert(
         "Authentication failed!",

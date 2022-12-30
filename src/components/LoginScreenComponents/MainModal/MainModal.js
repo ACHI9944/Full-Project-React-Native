@@ -42,7 +42,7 @@ function MainModal({ modalIsShown, closeModalHandler }) {
       setShowNextPage(false);
     } catch (error) {
       Alert.alert(
-        "Authentication failed",
+        "registration failed",
         "Could not create user, please check your input and try again later."
       );
       setIsAuthenticating(false);

@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { Button, ScrollView, Text, View } from "react-native";
-import Campaign from "../../components/Campaigns/Campaign";
+import Campaign from "../../components/HomeScreenComponents/Campaigns/Campaign";
 import DummyCampaigns from "../../components/DummyCampaigns";
 import { AuthContext } from "../../components/store/auth-context";
-import TopCreators from "../../components/TopCreators";
-import TopCreatorsMap from "../../components/TopCreatorsMap/TopCreatorsMap";
+import TopCreatorsMap from "../../components/HomeScreenComponents/TopCreatorsMap/TopCreatorsMap";
 import SmallButton from "../../components/ui/SmallButton";
 import HomeScreenStyle from "./HomeScreenStyle";
+import ChangeableInsights from "../../components/HomeScreenComponents/ChangeableInsights/ChangeableInsights";
 const styles = HomeScreenStyle;
 function HomeScreen() {
   const authCtx = useContext(AuthContext);
@@ -29,9 +29,12 @@ function HomeScreen() {
             <Campaign item={item} key={item.id} />
           ))}
         </View>
+
         <Text style={styles.creators}>Top Creators</Text>
 
         <TopCreatorsMap />
+
+        <ChangeableInsights />
       </ScrollView>
     </View>
   );

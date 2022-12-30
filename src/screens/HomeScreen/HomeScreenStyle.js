@@ -7,9 +7,10 @@ const HomeScreenStyle = StyleSheet.create({
   screen: {
     alignItems: "center",
     backgroundColor: "white",
+    paddingHorizontal: 15,
   },
   headerView: {
-    width: "90%",
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -25,10 +26,10 @@ const HomeScreenStyle = StyleSheet.create({
     fontSize: 15,
   },
   list: {
-    width: "90%",
+    width: "100%",
   },
   creators: {
-    width: "90%",
+    width: "100%",
     marginTop: 30,
     fontSize: 30,
     fontWeight: "500",

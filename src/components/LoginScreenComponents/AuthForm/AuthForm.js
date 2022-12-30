@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { View } from "react-native";
-import Input from "../Input/Input";
-import FlatButton from "../ui/FlatButton";
-import { emailVal, passVal } from "../ui/Validation";
+import Input from "../../Input/Input";
+import FlatButton from "../../ui/FlatButton";
+import { emailVal, passVal } from "../../ui/Validation";
 import AuthFormStyle from "./AuthFormStyle";
 
 const styles = AuthFormStyle;
