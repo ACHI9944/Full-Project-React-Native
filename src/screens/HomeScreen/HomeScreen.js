@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Button, ScrollView, Text, View } from "react-native";
 import Campaign from "../../components/HomeScreenComponents/Campaigns/Campaign";
 import DummyCampaigns from "../../components/DummyCampaigns";
-import { AuthContext } from "../../components/store/auth-context";
+import { AuthContext } from "../../store/auth-context";
 import TopCreatorsMap from "../../components/HomeScreenComponents/TopCreatorsMap/TopCreatorsMap";
 import SmallButton from "../../components/ui/SmallButton";
 import HomeScreenStyle from "./HomeScreenStyle";

@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import AbsoluteIconButton from "../../ui/AbsoluteIconButton";
 import LoadingOverlay from "../../ui/LoadingOverlay";
-import { createUser } from "../../util/auth";
+import { createUser } from "../../../util/auth";
 import SingupModalOne from "../SingupModalOne/SingupModalOne";
 import SingupModalTwo from "../SingupModalTwo/SingupModalTwo";
 import MainModalStyle from "./MainModalStyle";

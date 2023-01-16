@@ -32,7 +32,6 @@ const ChangeableInsightsStyle = StyleSheet.create({
     color: "white",
   },
   scrollView: {
-    flexDirection: "row",
     marginVertical: 20,
   },
   data: {

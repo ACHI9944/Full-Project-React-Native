@@ -1,7 +1,7 @@
 import { KeyboardAvoidingView, SafeAreaView, Text, View } from "react-native";
 import { useContext, useState } from "react";
-import { AuthContext } from "../../components/store/auth-context";
-import { login } from "../../components/util/auth";
+import { AuthContext } from "../../store/auth-context";
+import { login } from "../../util/auth";
 import LoginScreenStyle from "./LoginScreenStyle";
 import MainModal from "../../components/LoginScreenComponents/MainModal/MainModal";
 import LoadingOverlay from "../../components/ui/LoadingOverlay";

@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 const TopCreatorsMapStyle = StyleSheet.create({
   container: {
-    flexDirection: "row",
     padding: 4,
     marginTop: 20,
   },

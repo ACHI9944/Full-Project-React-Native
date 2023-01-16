@@ -62,7 +62,7 @@ function ChangeableInsights() {
           </Pressable>
         </View>
       </View>
-      <ScrollView contentContainerStyle={styles.scrollView}>
+      <ScrollView contentContainerStyle={styles.scrollView} horizontal>
         <View style={styles.data}>
           <AntDesign name="like2" size={35} color="black" />
           <Text style={styles.quantity}>13k</Text>

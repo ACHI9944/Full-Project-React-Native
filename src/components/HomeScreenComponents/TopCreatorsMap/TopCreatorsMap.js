@@ -5,7 +5,7 @@ import TopCreatorsMapStyle from "./TopCreatorsMapStyle";
 const styles = TopCreatorsMapStyle;
 function TopCreatorsMap() {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView contentContainerStyle={styles.container} horizontal>
       {TopCreators.map((item) => (
         <View key={item.id} style={styles.screen}>
           <Image source={{ uri: item.photo }} style={styles.image} />
