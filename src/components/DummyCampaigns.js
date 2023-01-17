@@ -1,7 +1,7 @@
 const DummyCampaigns = [
   {
     id: 1,
-    name: "Yakimoya",
+    name: "Yakimoya Severvivivivi",
     date: "Oct 22",
     dateNum: "22/10/23 - 22/10/23",
     people: [
@@ -9,20 +9,20 @@ const DummyCampaigns = [
       { id: 2, url: "https://randomuser.me/api/portraits/men/22.jpg" },
       { id: 3, url: "https://randomuser.me/api/portraits/men/22.jpg" },
       { id: 4, url: "https://randomuser.me/api/portraits/men/22.jpg" },
-      { id: 5, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      /* { id: 5, url: "https://randomuser.me/api/portraits/men/22.jpg" },
       { id: 6, url: "https://randomuser.me/api/portraits/men/22.jpg" },
       { id: 7, url: "https://randomuser.me/api/portraits/men/22.jpg" },
       { id: 8, url: "https://randomuser.me/api/portraits/men/22.jpg" },
       { id: 9, url: "https://randomuser.me/api/portraits/men/22.jpg" },
       { id: 10, url: "https://randomuser.me/api/portraits/men/22.jpg" },
       { id: 11, url: "https://randomuser.me/api/portraits/men/22.jpg" },
-      { id: 12, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 12, url: "https://randomuser.me/api/portraits/men/22.jpg" }, */
     ],
     totalReach: 35000,
   },
   {
     id: 2,
-    name: "Yakimoya",
+    name: "Yakimoya Severvivivivivivivivivivi",
     date: "Oct 22",
     dateNum: "22/10/23 - 22/10/23",
     people: [
@@ -37,7 +37,7 @@ const DummyCampaigns = [
   },
   {
     id: 3,
-    name: "Yakimoya",
+    name: "Yakimoya Severvivivivi",
     date: "Oct 22",
     dateNum: "22/10/23 - 22/10/23",
     people: [
@@ -115,7 +115,28 @@ const DummyCampaigns = [
   },
   {
     id: 7,
-    name: "Yakimoya",
+    name: "Aakimoya",
+    date: "Oct 22",
+    dateNum: "22/10/23 - 22/10/23",
+    people: [
+      { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 2, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 3, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 4, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 5, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 6, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 7, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 8, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 9, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 10, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 11, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+      { id: 12, url: "https://randomuser.me/api/portraits/men/22.jpg" },
+    ],
+    totalReach: 35000,
+  },
+  {
+    id: 8,
+    name: "Hurisaga",
     date: "Oct 22",
     dateNum: "22/10/23 - 22/10/23",
     people: [

@@ -1,10 +1,9 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AuthenticatedHeader from "../components/AuthenticatedHeader/AuthenticatedHeader";
 import BookingsScreen from "../screens/BookingsScreen/BookingsScreen";
 import CreatorsScreen from "../screens/CreatorsScreen/CreatorsScreen";
-import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import InsightsScreen from "../screens/InsightsScreen/InsightsScreen";
 import { Ionicons, Feather } from "@expo/vector-icons";
+import AuthenticatedHomeStack from "./AuthenticatedHomeStack";
 
 const BottomTab = createBottomTabNavigator();
 function AuthenticatedStack() {
@@ -13,12 +12,12 @@ function AuthenticatedStack() {
       screenOptions={{
         headerStyle: { backgroundColor: "white" },
         tabBarActiveTintColor: "#59cada",
-        header: () => <AuthenticatedHeader />,
+        headerShown: false,
       }}
     >
       <BottomTab.Screen
         name="Home"
-        component={HomeScreen}
+        component={AuthenticatedHomeStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-home-outline" size={size} color={color} />

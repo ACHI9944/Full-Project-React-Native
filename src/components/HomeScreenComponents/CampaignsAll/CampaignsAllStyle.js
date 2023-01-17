@@ -1,11 +1,13 @@
 import { Platform, StyleSheet } from "react-native";
 
-const CampaignStyle = StyleSheet.create({
+const CampaignsAllStyle = StyleSheet.create({
   campaign: {
-    width: "100%",
+    width: "45%",
+    marginRight: 11,
+    marginLeft: 4,
     marginVertical: 7,
     borderRadius: 7,
-    padding: 10,
+    padding: 5,
     backgroundColor: "white",
     overflow: Platform.OS === "android" ? "hidden" : "visible",
     elevation: 4,
@@ -19,33 +21,37 @@ const CampaignStyle = StyleSheet.create({
     marginVertical: 5,
   },
   fixedNameAndDate: {
-    fontSize: 23,
-    fontWeight: "500",
+    fontSize: 17,
+    fontWeight: "600",
   },
   dateNum: {
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: "500",
     color: "#a6a6a6",
   },
   botView: {
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "space-between",
   },
   botLefts: {
     flexDirection: "row",
   },
   botLeft: {
-    marginRight: 20,
+    marginRight: 10,
   },
   botLeftNum: {
-    fontSize: 15,
-    fontWeight: "500",
+    fontSize: 16,
+    fontWeight: "600",
   },
   botLeftTxt: {
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: "500",
     color: "#a6a6a6",
   },
+  botRight: {
+    alignSelf: "flex-end",
+    marginBottom: 5,
+  },
 });
 
-export default CampaignStyle;
+export default CampaignsAllStyle;

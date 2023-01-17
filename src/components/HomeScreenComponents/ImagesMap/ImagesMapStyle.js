@@ -3,9 +3,10 @@ import { StyleSheet } from "react-native";
 const ImagesMapStyle = StyleSheet.create({
   images: {
     flexDirection: "row",
-    paddingHorizontal: 10,
+    paddingHorizontal: 14,
     paddingVertical: 20,
   },
+
   imageView: {
     width: 35,
     height: 35,
@@ -14,6 +15,7 @@ const ImagesMapStyle = StyleSheet.create({
     borderColor: "white",
     borderWidth: 1.5,
   },
+
   image: {
     width: "100%",
     height: "100%",
