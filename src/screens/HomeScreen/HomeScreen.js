@@ -1,4 +1,4 @@
-import { useContext, useLayoutEffect } from "react";
+import { useContext } from "react";
 import { Button, ScrollView, Text, View } from "react-native";
 import Campaign from "../../components/HomeScreenComponents/Campaigns/Campaign";
 import DummyCampaigns from "../../components/DummyCampaigns";
@@ -7,21 +7,12 @@ import TopCreatorsMap from "../../components/HomeScreenComponents/TopCreatorsMap
 import SmallButton from "../../components/ui/SmallButton";
 import HomeScreenStyle from "./HomeScreenStyle";
 import ChangeableInsights from "../../components/HomeScreenComponents/ChangeableInsights/ChangeableInsights";
-import AuthenticatedHeader from "../../components/HomeScreenComponents/AuthenticatedHeader/AuthenticatedHeader";
 
 const styles = HomeScreenStyle;
 
 function HomeScreen({ navigation }) {
   const authCtx = useContext(AuthContext);
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: "",
-      headerSearchBarOptions: {
-        placeholder: "Search campaign",
-      },
-      header: () => <AuthenticatedHeader />,
-    });
-  }, [navigation]);
+
   return (
     <View style={styles.mainScreen}>
       <ScrollView contentContainerStyle={styles.screen}>

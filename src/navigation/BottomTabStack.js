@@ -3,21 +3,30 @@ import BookingsScreen from "../screens/BookingsScreen/BookingsScreen";
 import CreatorsScreen from "../screens/CreatorsScreen/CreatorsScreen";
 import InsightsScreen from "../screens/InsightsScreen/InsightsScreen";
 import { Ionicons, Feather } from "@expo/vector-icons";
-import AuthenticatedHomeStack from "./AuthenticatedHomeStack";
+
+import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
+import HomeStack from "./HomeStack";
 
 const BottomTab = createBottomTabNavigator();
-function AuthenticatedStack() {
+function BottomTabStack() {
+  const getTabBarStyle = (route) => {
+    const routeName = getFocusedRouteNameFromRoute(route);
+    let height = routeName === "AllCampaigns" ? 0 : 80;
+
+    return { height };
+  };
   return (
     <BottomTab.Navigator
-      screenOptions={{
+      screenOptions={({ route }) => ({
         headerStyle: { backgroundColor: "white" },
         tabBarActiveTintColor: "#59cada",
         headerShown: false,
-      }}
+        tabBarStyle: getTabBarStyle(route),
+      })}
     >
       <BottomTab.Screen
         name="Home"
-        component={AuthenticatedHomeStack}
+        component={HomeStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-home-outline" size={size} color={color} />
@@ -55,4 +64,4 @@ function AuthenticatedStack() {
   );
 }
 
-export default AuthenticatedStack;
+export default BottomTabStack;

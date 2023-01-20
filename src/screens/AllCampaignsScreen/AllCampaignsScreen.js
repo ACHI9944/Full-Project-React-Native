@@ -1,14 +1,19 @@
 import { Ionicons } from "@expo/vector-icons";
-import { useState } from "react";
-import { FlatList, SafeAreaView, TextInput, View } from "react-native";
+import { useRef, useState } from "react";
+import { FlatList, KeyboardAvoidingView, TextInput, View } from "react-native";
+import { Modalize } from "react-native-modalize";
 import DummyCampaigns from "../../components/DummyCampaigns";
 import AllCampaignsHeader from "../../components/HomeScreenComponents/AllCampaignsHeader/AllCampaignsHeader";
+import Campaign from "../../components/HomeScreenComponents/Campaigns/Campaign";
 import CampaignsAll from "../../components/HomeScreenComponents/CampaignsAll/CampaignsAll";
+import SortModal from "../../components/HomeScreenComponents/SortModal/SortModal";
+
 import AllCampaignsScreenStyle from "./AllCampaignsScreenStyle";
 const styles = AllCampaignsScreenStyle;
 
 function AllCampaignsScreen({ navigation }) {
   const [filteredData, setFilteredData] = useState(DummyCampaigns);
+  const [boxed, setBoxed] = useState(true);
 
   function filterFunction(text) {
     if (text) {
@@ -26,30 +31,77 @@ function AllCampaignsScreen({ navigation }) {
     filterFunction(enteredText);
   }
   function renderData(itemData) {
-    return <CampaignsAll item={itemData.item} />;
+    return boxed ? (
+      <CampaignsAll item={itemData.item} />
+    ) : (
+      <Campaign item={itemData.item} />
+    );
+  }
+  const modalizeSort = useRef(null);
+  const [sort, setSort] = useState("Newest to oldest");
+
+  function onOpenSortModal() {
+    modalizeSort.current?.open();
+  }
+  function onCancelSortModal() {
+    modalizeSort.current?.close();
   }
 
-  return (
-    <SafeAreaView style={styles.safeAreaView}>
-      <AllCampaignsHeader onPress={() => navigation.goBack()} />
-      <View style={styles.searchBox}>
-        <Ionicons name="md-search-outline" size={25} color="#959595" />
-        <TextInput
-          placeholder="Search campaign"
-          style={styles.searchInput}
-          onChangeText={searchHandler}
-        />
-      </View>
+  const sortedData = filteredData.sort((a, b) => {
+    if (sort === "Alphabet A-Z") {
+      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+    } else if (sort === "Alphabet Z-A") {
+      return a.name > b.name ? -1 : a.name > b.name ? 1 : 0;
+    } else if (sort === "Newest to oldest") {
+      return a.date.getTime() - b.date.getTime();
+    } else if (sort === "Oldest to newest") {
+      return b.date.getTime() - a.date.getTime();
+    }
+  });
 
-      <View style={styles.list}>
+  return (
+    <>
+      <KeyboardAvoidingView style={styles.mainView} behavior="height">
+        <AllCampaignsHeader
+          onPress={() => navigation.goBack()}
+          onChangeSize={() => setBoxed((prevValue) => !prevValue)}
+          boxed={boxed}
+          onOpenSortModal={onOpenSortModal}
+          onCancelSortModal={onCancelSortModal}
+        />
+        <View style={styles.searchBox}>
+          <Ionicons name="md-search-outline" size={25} color="#959595" />
+          <TextInput
+            placeholder="Search campaign"
+            style={styles.searchInput}
+            onChangeText={searchHandler}
+          />
+        </View>
+
         <FlatList
-          data={filteredData}
+          style={styles.list}
+          contentContainerStyle={styles.containerList}
+          data={sortedData}
           keyExtractor={(item) => item.id}
           renderItem={renderData}
-          numColumns={2}
+          showsVerticalScrollIndicator={false}
+          numColumns={boxed ? 2 : 1}
+          contentInsetAdjustmentBehavior
+          key={boxed ? 2 : 1}
         />
-      </View>
-    </SafeAreaView>
+      </KeyboardAvoidingView>
+      <Modalize
+        ref={modalizeSort}
+        modalStyle={styles.businessModal}
+        adjustToContentHeight={true}
+      >
+        <SortModal
+          sort={sort}
+          setSort={setSort}
+          onCancelSortModal={onCancelSortModal}
+        />
+      </Modalize>
+    </>
   );
 }
 

@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 
 const AllCampaignsScreenStyle = StyleSheet.create({
-  safeAreaView: {
-    flex: 1,
+  mainView: {
+    marginBottom: 145,
     backgroundColor: "white",
   },
   searchBox: {
@@ -11,18 +11,15 @@ const AllCampaignsScreenStyle = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#fbfbfb",
     alignItems: "center",
-    borderRadius: 15,
+    borderRadius: 7,
   },
   searchInput: {
     marginHorizontal: 10,
     fontSize: 16,
   },
   list: {
-    marginTop: 5,
-    marginHorizontal: 11,
+    marginTop: 10,
     width: "100%",
-    flexWrap: "wrap",
-    marginBottom: 70,
   },
 });
 

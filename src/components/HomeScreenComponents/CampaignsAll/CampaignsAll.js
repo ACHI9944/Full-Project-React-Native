@@ -8,7 +8,8 @@ const styles = CampaignsAllStyle;
 function CampaignsAll({ item }) {
   const { name, date, dateNum, people, totalReach } = item;
 
-  const nameAndDate = `${name} ${date}`;
+  const stringedDate = `${date.toString().slice(4, 7)} ${date.getFullYear()}`;
+  const nameAndDate = `${name} ${stringedDate}`;
   const slicedName = `${nameAndDate.slice(0, 15)} ...`;
   const fixedName = nameAndDate.length > 15 ? slicedName : nameAndDate;
 

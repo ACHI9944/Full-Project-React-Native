@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../store/auth-context";
 import LoadingOverlay from "../components/ui/LoadingOverlay";
 import LoginScreen from "../screens/LoginScreen/LoginScreen";
-import AuthenticatedStack from "./AuthenticatedStack";
+import BottomTabStack from "./BottomTabStack";
 
 function Navigation() {
   const [isTryingLogin, setIsTryingLogin] = useState(true);
@@ -27,7 +27,7 @@ function Navigation() {
   return (
     <>
       {!authCtx.isAuthenticated && <LoginScreen />}
-      {authCtx.isAuthenticated && <AuthenticatedStack />}
+      {authCtx.isAuthenticated && <BottomTabStack />}
     </>
   );
 }

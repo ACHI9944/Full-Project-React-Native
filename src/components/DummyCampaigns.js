@@ -1,8 +1,8 @@
 const DummyCampaigns = [
   {
     id: 1,
-    name: "Yakimoya Severvivivivi",
-    date: "Oct 22",
+    name: "Aakimoya Severvivivivi",
+    date: new Date("May 19, 2022"),
     dateNum: "22/10/23 - 22/10/23",
     people: [
       { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },
@@ -22,8 +22,8 @@ const DummyCampaigns = [
   },
   {
     id: 2,
-    name: "Yakimoya Severvivivivivivivivivivi",
-    date: "Oct 22",
+    name: "Iakimoya Severvivivivivivivivivivi",
+    date: new Date("Oct 12, 2022"),
     dateNum: "22/10/23 - 22/10/23",
     people: [
       { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },
@@ -37,8 +37,8 @@ const DummyCampaigns = [
   },
   {
     id: 3,
-    name: "Yakimoya Severvivivivi",
-    date: "Oct 22",
+    name: "Gakimoya Severvivivivi",
+    date: new Date("Jun 05, 2021"),
     dateNum: "22/10/23 - 22/10/23",
     people: [
       { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },
@@ -50,7 +50,7 @@ const DummyCampaigns = [
   {
     id: 4,
     name: "Yakimoya",
-    date: "Oct 22",
+    date: new Date("Sep 25, 2022"),
     dateNum: "22/10/23 - 22/10/23",
     people: [
       { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },
@@ -75,8 +75,8 @@ const DummyCampaigns = [
   },
   {
     id: 5,
-    name: "Yakimoya",
-    date: "Oct 22",
+    name: "Lakimoya",
+    date: new Date("May 19, 2022"),
     dateNum: "22/10/23 - 22/10/23",
     people: [
       { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },
@@ -94,8 +94,8 @@ const DummyCampaigns = [
   },
   {
     id: 6,
-    name: "Yakimoya",
-    date: "Oct 22",
+    name: "Cakimoya",
+    date: new Date("Feb 19, 2022"),
     dateNum: "22/10/23 - 22/10/23",
     people: [
       { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },
@@ -115,8 +115,8 @@ const DummyCampaigns = [
   },
   {
     id: 7,
-    name: "Aakimoya",
-    date: "Oct 22",
+    name: "Dakimoya",
+    date: new Date("Mar 11, 2022"),
     dateNum: "22/10/23 - 22/10/23",
     people: [
       { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },
@@ -136,8 +136,8 @@ const DummyCampaigns = [
   },
   {
     id: 8,
-    name: "Hurisaga",
-    date: "Oct 22",
+    name: "Burisaga",
+    date: new Date("May 19, 2022"),
     dateNum: "22/10/23 - 22/10/23",
     people: [
       { id: 1, url: "https://randomuser.me/api/portraits/men/22.jpg" },

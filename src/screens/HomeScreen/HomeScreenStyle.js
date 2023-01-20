@@ -7,7 +7,6 @@ const HomeScreenStyle = StyleSheet.create({
   screen: {
     alignItems: "center",
     backgroundColor: "white",
-    paddingHorizontal: 15,
   },
   headerView: {
     width: "100%",
@@ -19,11 +18,13 @@ const HomeScreenStyle = StyleSheet.create({
   header: {
     fontSize: 30,
     fontWeight: "500",
+    marginHorizontal: 15,
   },
   seeAll: {
     color: "#542ee0",
     fontWeight: "500",
     fontSize: 15,
+    marginHorizontal: 15,
   },
   list: {
     width: "100%",

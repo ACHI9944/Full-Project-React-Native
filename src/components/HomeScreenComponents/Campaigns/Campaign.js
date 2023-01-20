@@ -3,12 +3,14 @@ import ImagesMap from "../ImagesMap/ImagesMap";
 import CampaignStyle from "./CampaignsStyle";
 import { MaterialIcons } from "@expo/vector-icons";
 const styles = CampaignStyle;
+
 function Campaign({ item }) {
   const { name, date, dateNum, people, totalReach } = item;
 
-  const nameAndDate = `${name} ${date}`;
-  const slicedName = `${nameAndDate.slice(0, 30)} ...`;
-  const fixedName = nameAndDate.length > 30 ? slicedName : nameAndDate;
+  const stringedDate = `${date.toString().slice(4, 7)} ${date.getFullYear()}`;
+  const nameAndDate = `${name} ${stringedDate}`;
+  const slicedName = `${nameAndDate.slice(0, 27)} ...`;
+  const fixedName = nameAndDate.length > 27 ? slicedName : nameAndDate;
 
   return (
     <View style={styles.campaign}>
