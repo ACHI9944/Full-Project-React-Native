@@ -7,6 +7,7 @@ const ChangeableInsightsStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
+    paddingHorizontal: 15,
   },
   header: {
     fontSize: 30,
@@ -33,6 +34,7 @@ const ChangeableInsightsStyle = StyleSheet.create({
   },
   scrollView: {
     marginVertical: 20,
+    marginHorizontal: 15,
   },
   data: {
     width: 130,

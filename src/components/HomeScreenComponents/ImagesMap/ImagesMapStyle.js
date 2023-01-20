@@ -33,7 +33,7 @@ const ImagesMapStyle = StyleSheet.create({
     justifyContent: "center",
   },
   leftNumber: {
-    fontSize: "15",
+    fontSize: 15,
     fontWeight: "600",
   },
 });

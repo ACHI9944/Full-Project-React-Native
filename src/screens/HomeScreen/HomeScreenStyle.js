@@ -29,12 +29,6 @@ const HomeScreenStyle = StyleSheet.create({
   list: {
     width: "100%",
   },
-  creators: {
-    width: "100%",
-    marginTop: 30,
-    fontSize: 30,
-    fontWeight: "500",
-  },
 });
 
 export default HomeScreenStyle;

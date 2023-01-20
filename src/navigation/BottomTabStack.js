@@ -11,9 +11,7 @@ const BottomTab = createBottomTabNavigator();
 function BottomTabStack() {
   const getTabBarStyle = (route) => {
     const routeName = getFocusedRouteNameFromRoute(route);
-    let height = routeName === "AllCampaigns" ? 0 : 80;
-
-    return { height };
+    return routeName === "AllCampaigns" ? 0 : 80;
   };
   return (
     <BottomTab.Navigator
@@ -21,7 +19,10 @@ function BottomTabStack() {
         headerStyle: { backgroundColor: "white" },
         tabBarActiveTintColor: "#59cada",
         headerShown: false,
-        tabBarStyle: getTabBarStyle(route),
+        tabBarStyle: {
+          height: getTabBarStyle(route),
+          paddingBottom: 15,
+        },
       })}
     >
       <BottomTab.Screen

@@ -2,9 +2,8 @@ import { Platform, StyleSheet } from "react-native";
 
 const CampaignStyle = StyleSheet.create({
   campaign: {
-    width: "92%",
     marginVertical: 7,
-    marginLeft: 15,
+    marginHorizontal: 15,
     borderRadius: 7,
     padding: 10,
     backgroundColor: "white",

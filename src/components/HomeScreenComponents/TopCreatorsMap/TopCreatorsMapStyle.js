@@ -4,6 +4,7 @@ const TopCreatorsMapStyle = StyleSheet.create({
   container: {
     padding: 4,
     marginTop: 20,
+    marginHorizontal: 15,
   },
   screen: {
     alignItems: "center",
@@ -39,6 +40,13 @@ const TopCreatorsMapStyle = StyleSheet.create({
     color: "#542ee0",
     marginTop: 20,
     marginBottom: 5,
+  },
+  creators: {
+    width: "100%",
+    marginTop: 30,
+    fontSize: 30,
+    fontWeight: "500",
+    paddingHorizontal: 15,
   },
 });
 

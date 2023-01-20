@@ -3,6 +3,7 @@ import {
   Alert,
   KeyboardAvoidingView,
   Modal,
+  Platform,
   SafeAreaView,
   Text,
   View,
@@ -57,7 +58,7 @@ function MainModal({ modalIsShown, closeModalHandler }) {
         <SafeAreaView style={styles.safeareaView}>
           <KeyboardAvoidingView
             style={styles.keyboardAvoiding}
-            behavior={"padding"}
+            behavior={Platform.OS === "android" ? "height" : "padding"}
           >
             <View style={styles.topBar}>
               <AbsoluteIconButton

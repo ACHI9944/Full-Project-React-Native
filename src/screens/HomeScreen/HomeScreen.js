@@ -35,10 +35,7 @@ function HomeScreen({ navigation }) {
           ))}
         </View>
 
-        <Text style={styles.creators}>Top Creators</Text>
-
         <TopCreatorsMap />
-
         <ChangeableInsights />
       </ScrollView>
     </View>

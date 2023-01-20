@@ -1,4 +1,10 @@
-import { KeyboardAvoidingView, SafeAreaView, Text, View } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView,
+  Text,
+  View,
+} from "react-native";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../store/auth-context";
 import { login } from "../../util/auth";
@@ -53,7 +59,7 @@ function LoginScreen() {
       <SafeAreaView style={styles.safeAreaView}>
         <KeyboardAvoidingView
           style={styles.keyboardAvoidingView}
-          behavior={"padding"}
+          behavior={Platform.OS === "android" ? "height" : "padding"}
         >
           <View style={styles.imageAndText}>
             <LogoWithText />
