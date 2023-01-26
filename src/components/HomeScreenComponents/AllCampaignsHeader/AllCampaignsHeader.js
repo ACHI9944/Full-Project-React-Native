@@ -3,13 +3,7 @@ import { Pressable, Text, View } from "react-native";
 import AllCampaignsHeaderStyle from "./AllCampaignsHeaderStyle";
 const styles = AllCampaignsHeaderStyle;
 
-function AllCampaignsHeader({
-  onPress,
-  onChangeSize,
-  boxed,
-  onOpenSortModal,
-  onCancelSortModal,
-}) {
+function AllCampaignsHeader({ onPress, onChangeSize, boxed, onOpenSortModal }) {
   return (
     <View style={styles.topBar}>
       <Pressable onPress={onPress} style={styles.goBack}>

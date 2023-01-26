@@ -1,12 +1,8 @@
 import { StyleSheet } from "react-native";
 
-const AllCampaignsScreenStyle = StyleSheet.create({
-  mainView: {
-    /* marginBottom: 165, */
-    backgroundColor: "white",
-  },
+const searchBoxStyle = StyleSheet.create({
   searchBox: {
-    marginTop: 10,
+    marginTop: 20,
     marginHorizontal: 15,
     padding: 10,
     flexDirection: "row",
@@ -18,11 +14,6 @@ const AllCampaignsScreenStyle = StyleSheet.create({
     marginHorizontal: 10,
     fontSize: 16,
   },
-  list: {
-    marginTop: 10,
-    width: "100%",
-    marginBottom: 165,
-  },
 });
 
-export default AllCampaignsScreenStyle;
+export default searchBoxStyle;

@@ -72,6 +72,7 @@ function SingupModalTwo({ setValues, submitInputs }) {
 
       <View style={styles.signupForm}>
         <ScrollView
+          showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.scrollContent}
           style={styles.scrollStyle}
         >

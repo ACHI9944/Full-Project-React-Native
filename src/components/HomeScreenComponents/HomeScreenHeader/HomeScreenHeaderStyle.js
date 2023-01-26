@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const AuthenticatedHeaderStyle = StyleSheet.create({
+const HomeScreenHeaderStyle = StyleSheet.create({
   screen: {
     height: 100,
     backgroundColor: "white",
@@ -8,11 +8,12 @@ const AuthenticatedHeaderStyle = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     overflow: Platform.OS === "android" ? "hidden" : "visible",
-    elevation: 4,
+    elevation: 2,
     shadowColor: "black",
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 0 },
-    shadowRadius: 4,
+    shadowRadius: 2,
+    paddingTop: 35,
   },
   imageView: {
     width: 35,
@@ -32,4 +33,4 @@ const AuthenticatedHeaderStyle = StyleSheet.create({
     marginHorizontal: 10,
   },
 });
-export default AuthenticatedHeaderStyle;
+export default HomeScreenHeaderStyle;

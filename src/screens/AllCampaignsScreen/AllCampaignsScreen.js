@@ -6,6 +6,7 @@ import DummyCampaigns from "../../components/DummyCampaigns";
 import AllCampaignsHeader from "../../components/HomeScreenComponents/AllCampaignsHeader/AllCampaignsHeader";
 import Campaign from "../../components/HomeScreenComponents/Campaigns/Campaign";
 import CampaignsAll from "../../components/HomeScreenComponents/CampaignsAll/CampaignsAll";
+import Searchbox from "../../components/HomeScreenComponents/Searchbox/Searchbox";
 import SortModal from "../../components/HomeScreenComponents/SortModal/SortModal";
 
 import AllCampaignsScreenStyle from "./AllCampaignsScreenStyle";
@@ -14,7 +15,6 @@ const styles = AllCampaignsScreenStyle;
 function AllCampaignsScreen({ navigation }) {
   const [filteredData, setFilteredData] = useState(DummyCampaigns);
   const [boxed, setBoxed] = useState(true);
-
   function filterFunction(text) {
     if (text) {
       const newData = DummyCampaigns.filter((item) => {
@@ -69,14 +69,7 @@ function AllCampaignsScreen({ navigation }) {
           onOpenSortModal={onOpenSortModal}
           onCancelSortModal={onCancelSortModal}
         />
-        <View style={styles.searchBox}>
-          <Ionicons name="md-search-outline" size={25} color="#959595" />
-          <TextInput
-            placeholder="Search campaign"
-            style={styles.searchInput}
-            onChangeText={searchHandler}
-          />
-        </View>
+        <Searchbox onChangeText={searchHandler} placeholder="Search campaign" />
 
         <FlatList
           style={styles.list}
@@ -86,7 +79,6 @@ function AllCampaignsScreen({ navigation }) {
           renderItem={renderData}
           showsVerticalScrollIndicator={false}
           numColumns={boxed ? 2 : 1}
-          contentInsetAdjustmentBehavior
           key={boxed ? 2 : 1}
         />
       </KeyboardAvoidingView>

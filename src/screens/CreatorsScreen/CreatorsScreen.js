@@ -1,5 +1,5 @@
 function CreatorsScreen() {
-  return
+  return;
 }
 
 export default CreatorsScreen;

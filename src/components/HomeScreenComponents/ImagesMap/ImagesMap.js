@@ -2,10 +2,10 @@ import { Image, Text, View } from "react-native";
 import ImagesMapStyle from "./ImagesMapStyle";
 
 const styles = ImagesMapStyle;
-function ImagesMap({ people, innerStyle }) {
-  if (people.length > 7) {
-    const slicedImages = people.slice(0, 7);
-    const leftImages = people.length - 7;
+function ImagesMap({ creators, innerStyle }) {
+  if (creators.length > 7) {
+    const slicedImages = creators.slice(0, 7);
+    const leftImages = creators.length - 7;
     return (
       <View
         style={[
@@ -21,7 +21,7 @@ function ImagesMap({ people, innerStyle }) {
               innerStyle === "CampaignsAll" ? { marginLeft: -20 } : null,
             ]}
           >
-            <Image source={{ uri: item.url }} style={styles.image} />
+            <Image source={{ uri: item.photo }} style={styles.image} />
           </View>
         ))}
         <View style={styles.leftNumberView}>
@@ -37,7 +37,7 @@ function ImagesMap({ people, innerStyle }) {
         innerStyle === "CampaignsAll" ? { paddingHorizontal: 22 } : null,
       ]}
     >
-      {people.map((item) => (
+      {creators.map((item) => (
         <View
           key={item.id}
           style={[
@@ -45,7 +45,7 @@ function ImagesMap({ people, innerStyle }) {
             innerStyle === "CampaignsAll" ? { marginLeft: -20 } : null,
           ]}
         >
-          <Image source={{ uri: item.url }} style={styles.image} />
+          <Image source={{ uri: item.photo }} style={styles.image} />
         </View>
       ))}
     </View>

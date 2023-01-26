@@ -7,9 +7,9 @@ const AllCampaignsHeaderStyle = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-between",
+    paddingTop: 35,
   },
   goBack: {
-    marginTop: 30,
     marginHorizontal: 10,
     flexDirection: "row",
     alignItems: "center",
@@ -19,7 +19,6 @@ const AllCampaignsHeaderStyle = StyleSheet.create({
     fontWeight: "500",
   },
   commands: {
-    marginTop: 30,
     marginHorizontal: 15,
     flexDirection: "row",
     justifyContent: "space-between",

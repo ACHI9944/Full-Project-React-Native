@@ -30,6 +30,7 @@ function SingupModalOne({ nextPage, setValues }) {
       </View>
       <View style={styles.signupForm}>
         <ScrollView
+          showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.scrollContent}
           style={styles.scrollStyle}
         >

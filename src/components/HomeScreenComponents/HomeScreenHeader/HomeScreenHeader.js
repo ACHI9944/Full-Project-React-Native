@@ -1,12 +1,12 @@
 import { Ionicons } from "@expo/vector-icons";
-import { Image, SafeAreaView, View } from "react-native";
-import AuthenticatedHeaderStyle from "./AuthenticatedHeaderStyle";
+import { Image, View } from "react-native";
+import HomeScreenHeaderStyle from "./HomeScreenHeaderStyle";
 
-const styles = AuthenticatedHeaderStyle;
+const styles = HomeScreenHeaderStyle;
 
-function AuthenticatedHeader() {
+function HomeScreenHeader() {
   return (
-    <SafeAreaView style={styles.screen}>
+    <View style={styles.screen}>
       <View style={styles.imageView}>
         <Image
           style={styles.image}
@@ -17,8 +17,8 @@ function AuthenticatedHeader() {
         <Ionicons name="search-outline" size={30} color="black" />
         <Ionicons name="ios-notifications-outline" size={30} color="black" />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
-export default AuthenticatedHeader;
+export default HomeScreenHeader;

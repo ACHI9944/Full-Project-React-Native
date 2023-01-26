@@ -1,0 +1,23 @@
+import { Ionicons } from "@expo/vector-icons";
+import { Pressable, Text, View } from "react-native";
+import DummyCampaigns from "../../DummyCampaigns";
+import SingleCampaignHeaderStyle from "./SingleCampaignHeaderStyle";
+
+const styles = SingleCampaignHeaderStyle;
+
+function SingleCampaignHeader({ route, onPress }) {
+  const selectedCampaign = DummyCampaigns.find(
+    (item) => item.id === route.params.campaignId
+  );
+  const { name } = selectedCampaign;
+  return (
+    <View style={styles.topBar}>
+      <Pressable onPress={onPress} style={styles.goBack}>
+        <Ionicons name="md-chevron-back-outline" size={25} color="black" />
+        <Text style={styles.goBackText}>{name}</Text>
+      </Pressable>
+    </View>
+  );
+}
+
+export default SingleCampaignHeader;

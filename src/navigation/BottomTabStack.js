@@ -11,7 +11,7 @@ const BottomTab = createBottomTabNavigator();
 function BottomTabStack() {
   const getTabBarStyle = (route) => {
     const routeName = getFocusedRouteNameFromRoute(route);
-    return routeName === "AllCampaigns" ? 0 : 80;
+    return routeName === "AllCampaigns" || routeName === "Campaign" ? 0 : 65;
   };
   return (
     <BottomTab.Navigator

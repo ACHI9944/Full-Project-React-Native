@@ -1,8 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AllCampaignsHeader from "../components/HomeScreenComponents/AllCampaignsHeader/AllCampaignsHeader";
-import AuthenticatedHeader from "../components/HomeScreenComponents/AuthenticatedHeader/AuthenticatedHeader";
+import HomeScreenHeader from "../components/HomeScreenComponents/HomeScreenHeader/HomeScreenHeader";
+import SingleCampaignHeader from "../components/HomeScreenComponents/SingleCampaignHeader/SingleCampaignHeader";
 import AllCampaignsScreen from "../screens/AllCampaignsScreen/AllCampaignsScreen";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
+import SingleCampaign from "../screens/SingleCampaign/SingleCampaign";
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +14,7 @@ function HomeStack() {
         name="HomeMain"
         component={HomeScreen}
         options={{
-          header: () => <AuthenticatedHeader />,
+          header: () => <HomeScreenHeader />,
         }}
       />
       <Stack.Screen
@@ -22,6 +23,18 @@ function HomeStack() {
         options={{
           headerShown: false,
         }}
+      />
+      <Stack.Screen
+        name="Campaign"
+        component={SingleCampaign}
+        options={({ route, navigation }) => ({
+          header: () => (
+            <SingleCampaignHeader
+              route={route}
+              onPress={() => navigation.goBack()}
+            />
+          ),
+        })}
       />
     </Stack.Navigator>
   );
