@@ -1,7 +1,7 @@
 import { Platform, StyleSheet } from "react-native";
 
-const SingleCampaignHeaderStyle = StyleSheet.create({
-  topBar: {
+const CreatorsScreenHeaderStyle = StyleSheet.create({
+  screen: {
     height: 100,
     backgroundColor: "white",
     alignItems: "center",
@@ -14,16 +14,18 @@ const SingleCampaignHeaderStyle = StyleSheet.create({
     shadowOffset: { width: 0, height: 0 },
     shadowRadius: 2,
     paddingTop: 35,
+    paddingHorizontal: 15,
   },
-  goBack: {
-    marginHorizontal: 10,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  goBackText: {
+  header: {
     fontSize: 23,
     fontWeight: "500",
   },
+  icons: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: 70,
+    justifyContent: "space-between",
+  },
 });
 
-export default SingleCampaignHeaderStyle;
+export default CreatorsScreenHeaderStyle;

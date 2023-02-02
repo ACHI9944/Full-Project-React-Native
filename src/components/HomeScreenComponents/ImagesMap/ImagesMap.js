@@ -10,7 +10,7 @@ function ImagesMap({ creators, innerStyle }) {
       <View
         style={[
           styles.images,
-          innerStyle === "CampaignsAll" ? { paddingHorizontal: 22 } : null,
+          innerStyle === "CampaignsBoxed" ? { paddingHorizontal: 22 } : null,
         ]}
       >
         {slicedImages.map((item) => (
@@ -18,7 +18,7 @@ function ImagesMap({ creators, innerStyle }) {
             key={item.id}
             style={[
               styles.imageView,
-              innerStyle === "CampaignsAll" ? { marginLeft: -20 } : null,
+              innerStyle === "CampaignsBoxed" ? { marginLeft: -20 } : null,
             ]}
           >
             <Image source={{ uri: item.photo }} style={styles.image} />
@@ -34,7 +34,7 @@ function ImagesMap({ creators, innerStyle }) {
     <View
       style={[
         styles.images,
-        innerStyle === "CampaignsAll" ? { paddingHorizontal: 22 } : null,
+        innerStyle === "CampaignsBoxed" ? { paddingHorizontal: 22 } : null,
       ]}
     >
       {creators.map((item) => (
@@ -42,7 +42,7 @@ function ImagesMap({ creators, innerStyle }) {
           key={item.id}
           style={[
             styles.imageView,
-            innerStyle === "CampaignsAll" ? { marginLeft: -20 } : null,
+            innerStyle === "CampaignsBoxed" ? { marginLeft: -20 } : null,
           ]}
         >
           <Image source={{ uri: item.photo }} style={styles.image} />

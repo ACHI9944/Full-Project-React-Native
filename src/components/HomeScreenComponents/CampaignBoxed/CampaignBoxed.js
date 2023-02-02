@@ -1,13 +1,13 @@
 import { Pressable, Text, View } from "react-native";
 import ImagesMap from "../ImagesMap/ImagesMap";
 import { MaterialIcons } from "@expo/vector-icons";
-import CampaignsAllStyle from "./CampaignsAllStyle";
 import NumberSlicer from "../../ui/NumberSlicer";
 import { useNavigation } from "@react-navigation/native";
+import CampaignBoxedStyle from "./CampaignBoxedStyle";
 
-const styles = CampaignsAllStyle;
+const styles = CampaignBoxedStyle;
 
-function CampaignsAll({ item }) {
+function CampaignBoxed({ item }) {
   const navigation = useNavigation();
   const { id, name, date, dateNum, creators } = item;
 
@@ -28,7 +28,7 @@ function CampaignsAll({ item }) {
 
       <Text style={styles.dateNum}>{dateNum}</Text>
 
-      <ImagesMap creators={creators} innerStyle="CampaignsAll" />
+      <ImagesMap creators={creators} innerStyle="CampaignsBoxed" />
       <View style={styles.botView}>
         <View style={styles.botLefts}>
           <View style={styles.botLeft}>
@@ -55,4 +55,4 @@ function CampaignsAll({ item }) {
   );
 }
 
-export default CampaignsAll;
+export default CampaignBoxed;

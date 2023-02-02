@@ -1,17 +1,20 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import BookingsScreen from "../screens/BookingsScreen/BookingsScreen";
-import CreatorsScreen from "../screens/CreatorsScreen/CreatorsScreen";
 import InsightsScreen from "../screens/InsightsScreen/InsightsScreen";
 import { Ionicons, Feather } from "@expo/vector-icons";
-
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 import HomeStack from "./HomeStack";
+import CreatorsStack from "./CreatorsStack";
 
 const BottomTab = createBottomTabNavigator();
 function BottomTabStack() {
   const getTabBarStyle = (route) => {
     const routeName = getFocusedRouteNameFromRoute(route);
-    return routeName === "AllCampaigns" || routeName === "Campaign" ? 0 : 65;
+    return routeName === "AllCampaigns" ||
+      routeName === "Campaign" ||
+      routeName === "CampaignCreatorsScreen"
+      ? 0
+      : 65;
   };
   return (
     <BottomTab.Navigator
@@ -36,7 +39,7 @@ function BottomTabStack() {
       />
       <BottomTab.Screen
         name="Creators"
-        component={CreatorsScreen}
+        component={CreatorsStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="people-outline" size={size} color={color} />

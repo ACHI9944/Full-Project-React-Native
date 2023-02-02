@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 
-const SingleCampaignStyle = StyleSheet.create({
+const CampaignScreenStyle = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: "white",
   },
 });
 
-export default SingleCampaignStyle;
+export default CampaignScreenStyle;

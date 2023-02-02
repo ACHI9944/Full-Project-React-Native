@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { Button, ScrollView, Text, View } from "react-native";
-import Campaign from "../../components/HomeScreenComponents/Campaigns/Campaign";
 import DummyCampaigns from "../../components/DummyCampaigns";
 import { AuthContext } from "../../store/auth-context";
 import SmallButton from "../../components/ui/SmallButton";
 import HomeScreenStyle from "./HomeScreenStyle";
 import ChangeableInsights from "../../components/HomeScreenComponents/ChangeableInsights/ChangeableInsights";
 import CreatorsMap from "../../components/HomeScreenComponents/CreatorsMap/CreatorsMap";
+import Campaign from "../../components/HomeScreenComponents/Campaign/Campaign";
 
 const styles = HomeScreenStyle;
 

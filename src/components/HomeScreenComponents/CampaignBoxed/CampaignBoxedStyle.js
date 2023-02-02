@@ -1,6 +1,6 @@
 import { Platform, StyleSheet } from "react-native";
 
-const CampaignsAllStyle = StyleSheet.create({
+const CampaignBoxedStyle = StyleSheet.create({
   campaign: {
     width: '44.5%',
     marginLeft: 15,
@@ -53,4 +53,4 @@ const CampaignsAllStyle = StyleSheet.create({
   },
 });
 
-export default CampaignsAllStyle;
+export default CampaignBoxedStyle;

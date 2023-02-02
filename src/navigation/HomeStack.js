@@ -1,9 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreenHeader from "../components/HomeScreenComponents/HomeScreenHeader/HomeScreenHeader";
-import SingleCampaignHeader from "../components/HomeScreenComponents/SingleCampaignHeader/SingleCampaignHeader";
 import AllCampaignsScreen from "../screens/AllCampaignsScreen/AllCampaignsScreen";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
-import SingleCampaign from "../screens/SingleCampaign/SingleCampaign";
+import CampaignScreen from "../screens/CampaignScreen/CampaignScreen";
+import CommonHeader from "../components/HomeScreenComponents/CommonHeader/CommonHeader";
+import CampaignCreatorsScreen from "../screens/CampaignCreatorsScreen/CampaignCreatorsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,13 +25,27 @@ function HomeStack() {
           headerShown: false,
         }}
       />
+
       <Stack.Screen
         name="Campaign"
-        component={SingleCampaign}
+        component={CampaignScreen}
         options={({ route, navigation }) => ({
           header: () => (
-            <SingleCampaignHeader
+            <CommonHeader
+              header="Campaign"
               route={route}
+              onPress={() => navigation.goBack()}
+            />
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="CampaignCreatorsScreen"
+        component={CampaignCreatorsScreen}
+        options={({ navigation }) => ({
+          header: () => (
+            <CommonHeader
+              header="Creators"
               onPress={() => navigation.goBack()}
             />
           ),

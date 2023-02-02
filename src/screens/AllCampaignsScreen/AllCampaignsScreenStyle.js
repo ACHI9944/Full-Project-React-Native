@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 const AllCampaignsScreenStyle = StyleSheet.create({
   mainView: {
-    /* marginBottom: 165, */
     backgroundColor: "white",
   },
   searchBox: {

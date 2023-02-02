@@ -1,15 +1,13 @@
-import { Ionicons } from "@expo/vector-icons";
 import { useRef, useState } from "react";
-import { FlatList, KeyboardAvoidingView, TextInput, View } from "react-native";
+import { FlatList, KeyboardAvoidingView, View } from "react-native";
 import { Modalize } from "react-native-modalize";
 import DummyCampaigns from "../../components/DummyCampaigns";
 import AllCampaignsHeader from "../../components/HomeScreenComponents/AllCampaignsHeader/AllCampaignsHeader";
-import Campaign from "../../components/HomeScreenComponents/Campaigns/Campaign";
-import CampaignsAll from "../../components/HomeScreenComponents/CampaignsAll/CampaignsAll";
 import Searchbox from "../../components/HomeScreenComponents/Searchbox/Searchbox";
 import SortModal from "../../components/HomeScreenComponents/SortModal/SortModal";
-
 import AllCampaignsScreenStyle from "./AllCampaignsScreenStyle";
+import CampaignBoxed from "../../components/HomeScreenComponents/CampaignBoxed/CampaignBoxed";
+import Campaign from "../../components/HomeScreenComponents/Campaign/Campaign";
 const styles = AllCampaignsScreenStyle;
 
 function AllCampaignsScreen({ navigation }) {
@@ -32,7 +30,7 @@ function AllCampaignsScreen({ navigation }) {
   }
   function renderData(itemData) {
     return boxed ? (
-      <CampaignsAll item={itemData.item} />
+      <CampaignBoxed item={itemData.item} />
     ) : (
       <Campaign item={itemData.item} />
     );
@@ -70,10 +68,9 @@ function AllCampaignsScreen({ navigation }) {
           onCancelSortModal={onCancelSortModal}
         />
         <Searchbox onChangeText={searchHandler} placeholder="Search campaign" />
-
         <FlatList
           style={styles.list}
-          contentContainerStyle={styles.containerList}
+          contentContainerStyle={styles.containerStyle}
           data={sortedData}
           keyExtractor={(item) => item.id}
           renderItem={renderData}

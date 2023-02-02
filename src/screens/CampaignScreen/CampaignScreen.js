@@ -3,18 +3,19 @@ import DummyCampaigns from "../../components/DummyCampaigns";
 import CreatorsMap from "../../components/HomeScreenComponents/CreatorsMap/CreatorsMap";
 import Searchbox from "../../components/HomeScreenComponents/Searchbox/Searchbox";
 import StoriesMap from "../../components/HomeScreenComponents/StoriesMap/StoriesMap";
-import SingleCampaignStyle from "./SingleCampaignStyle";
+import CampaignScreenStyle from "./CampaignScreenStyle";
 
-const styles = SingleCampaignStyle;
+const styles = CampaignScreenStyle;
 
-function SingleCampaign({ route, navigation }) {
+function CampaignScreen({ route, }) {
   const selectedCampaign = DummyCampaigns.find(
     (item) => item.id === route.params.campaignId
   );
-  const { creators } = selectedCampaign;
+  const { creators, id } = selectedCampaign;
+  let slicedData = creators.slice(0, 7);
 
   function searchHandler(enteredText) {
-    console.log(enteredText);
+    
   }
 
   return (
@@ -24,10 +25,10 @@ function SingleCampaign({ route, navigation }) {
         <StoriesMap data={selectedCampaign} />
         <StoriesMap data={selectedCampaign} />
         <StoriesMap data={selectedCampaign} />
-        <CreatorsMap data={creators} header="Creators" />
+        <CreatorsMap data={slicedData} id={id} header="Creators" />
       </ScrollView>
     </View>
   );
 }
 
-export default SingleCampaign;
+export default CampaignScreen;
