@@ -1,11 +1,16 @@
-import { Image, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Image, Pressable, Text, View } from "react-native";
 import NumberSlicer from "../../ui/NumberSlicer";
 import CreatorStyle from "./CreatorStyle";
 const styles = CreatorStyle;
 
 function Creator({ data }) {
+  const navigation = useNavigation();
   return (
-    <View style={styles.creator}>
+    <Pressable
+      style={styles.creator}
+      onPress={() => navigation.navigate("Creator", { creatorId: data.id })}
+    >
       <View style={styles.imageAndNames}>
         <Image source={{ uri: data.photo }} style={styles.photo} />
         <View style={styles.names}>
@@ -17,7 +22,7 @@ function Creator({ data }) {
         <Text style={styles.followersText}>{NumberSlicer(data.followers)}</Text>
         <Text style={styles.followersText}>Followers</Text>
       </View>
-    </View>
+    </Pressable>
   );
 }
 

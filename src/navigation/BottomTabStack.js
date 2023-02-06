@@ -12,8 +12,9 @@ function BottomTabStack() {
     const routeName = getFocusedRouteNameFromRoute(route);
     return routeName === "AllCampaigns" ||
       routeName === "Campaign" ||
-      routeName === "CampaignCreatorsScreen"
-      ? 0
+      routeName === "CampaignCreatorsScreen" ||
+      routeName === "Posts"
+      ? null
       : 65;
   };
   return (

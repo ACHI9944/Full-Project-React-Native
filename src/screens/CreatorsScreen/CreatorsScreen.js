@@ -14,9 +14,6 @@ function CreatorsScreen() {
   DummyCampaigns.map((item) => {
     item.creators.map((item) => creators.push(item));
   });
-  for (let i = 0; i < creators.length; i++) {
-    creators[i].id = i;
-  }
 
   function renderData(itemData) {
     return boxed ? (
@@ -35,7 +32,7 @@ function CreatorsScreen() {
       />
       <FlatList
         style={styles.list}
-        data={creators}
+        data={creators.slice(0, 20)}
         keyExtractor={(item) => item.id}
         renderItem={renderData}
         showsVerticalScrollIndicator={false}

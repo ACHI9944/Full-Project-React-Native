@@ -1,17 +1,25 @@
-import { Image, ImageBackground, ScrollView, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { ScrollView, Text, View } from "react-native";
+import Story from "../../CommonComponents/Story/Story";
 import SmallButton from "../../ui/SmallButton";
 import StoriesMapStyle from "./StoriesMapStyle";
 
 const styles = StoriesMapStyle;
-function StoriesMap({ data }) {
-  const { creators, name } = data;
-  const slicedCreators = creators.slice(0, 7);
+function StoriesMap({ data, header }) {
+  const navigation = useNavigation();
+  const { creators, name, id } = data;
+  const slicedCreators = creators.slice(0, 3);
   return (
     <>
       <View style={styles.headerContainer}>
-        <Text style={styles.header}>Stories</Text>
+        <Text style={styles.header}>{header}</Text>
 
-        <SmallButton onPress={() => {}} textStyle={styles.seeAll}>
+        <SmallButton
+          onPress={() =>
+            navigation.navigate("Posts", { campaignId: id, data: header })
+          }
+          textStyle={styles.seeAll}
+        >
           See all
         </SmallButton>
       </View>
@@ -22,21 +30,9 @@ function StoriesMap({ data }) {
       >
         {slicedCreators.map((creator) =>
           creator.stories.map((story) => (
-            <ImageBackground
-              key={+`${creator.id}${story.id}`}
-              source={{ uri: story.story }}
-              style={styles.imageView}
-              imageStyle={styles.image}
-            >
-              <Image
-                source={{ uri: creator.photo }}
-                style={styles.profileImage}
-              />
-              <View style={styles.textsView}>
-                <Text style={styles.creatornameText}>{creator.name}</Text>
-                <Text style={styles.campaignNameText}>For: {name}</Text>
-              </View>
-            </ImageBackground>
+            <View key={+`${creator.id}${story.id}`} style={styles.storyView}>
+              <Story story={story} name={name} creator={creator} />
+            </View>
           ))
         )}
       </ScrollView>

@@ -17,9 +17,7 @@ function HomeScreen({ navigation }) {
   DummyCampaigns.map((item) => {
     item.creators.map((item) => allCreators.push(item));
   });
-  for (let i = 0; i < allCreators.length; i++) {
-    allCreators[i].id = i;
-  }
+  
   const sortedSlicedData = allCreators
     .sort((a, b) => b.followers - a.followers)
     .slice(0, 7);
